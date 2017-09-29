@@ -1,0 +1,35 @@
+/**
+ * Kim Luong
+ * Computer Science Period 3
+ * Assignment: TextLab03 (Math)
+ *  Version: 100 Point
+ */
+public class TextLab03v100
+{
+    public static void main(String args[])
+    {
+        System.out.println("TextLab03v100/n");
+        double principal =259000;
+        double annualRate= 5.75;
+        double numYears=30;
+        double monthlyRate;
+        //mpyr is month per year
+        double mpyr=12;
+        double numMonth;
+        double monthPay;
+        //denominator of equation
+        double denMonth;
+        
+        System.out.println("Principal" + principal);
+        System.out.println("Annual Rate" + annualRate + "%");
+        System.out.println("Number of Years" +numYears);
+        //get Rate(r)
+        monthlyRate=annualRate/mpyr;
+        //get Number of Months (N)
+        numMonth=numYears*mpyr;
+        //Equation: monthPay=[(r*(1+r)^N)/((1+R)^N-1)]*P
+        denMonth=monthlyRate*(1+monthlyRate)^numMonth;
+        
+        
+    }
+}
