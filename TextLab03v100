@@ -1,0 +1,39 @@
+/**
+ * Kim Luong
+ * Computer Science Period 3
+ * Assignment: TextLab03 (Math)
+ *  Version: 100 Point
+ */
+public class TextLab03v100
+{
+    public static void main(String args[])
+    {
+        System.out.println("TextLab03v100\n");
+        double principal =259000;   //P
+        double annualRate= 5.75;
+        double numYears=30;
+        double monthlyPay;
+        double ttlInterest;
+        double ttlPrice;//total payment 
+        
+        System.out.println("Principal: " + principal);
+        System.out.println("Annual Rate: " + annualRate  + "%");
+        System.out.println("Number of Years: " + numYears);
+        
+        double annualDecimal= annualRate * Math.pow(10,-2);
+        double monthlyRate = annualDecimal / 12;   //R
+        double numMonths = numYears * 12;   //N
+        //Equation: monthPay=[(r*(1+r)^N)/((1+R)^N-1)]*P
+        monthlyPay=((monthlyRate * Math.pow(1+monthlyRate,numMonths))/(Math.pow(1+monthlyRate,numMonths)-1))* principal;
+        System.out.println("Monthly Payment: " + monthlyPay);
+        //TOTAL INTEREST
+        //Equation: Ttl=M*N-P
+        ttlInterest= (monthlyPay * numMonths) - principal;
+        System.out.println("Total Interest: " + ttlInterest);
+        //TOTAL AMOUNT PAID
+        //Equation: ttl= p(1+i)^N
+        //
+        ttlPrice= principal * Math.pow(1 + monthlyRate,numMonths);
+        System.out.println("Total Payment: " + ttlPrice);
+    }
+}
