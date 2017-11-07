@@ -1,0 +1,75 @@
+<html>
+<head>
+<script type="text/javascript">
+	function drawBody()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx = myCanvas.getContext("2d");
+
+		ctx.fillRect (150,100,150,75);
+	}
+	function drawLegs1()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx2 = myCanvas.getContext("2d");
+
+		ctx2.fillRect (150,175,5,25);
+		ctx2.fillRect (160,175,5,25);
+	}
+	function drawLegs2()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx3 = myCanvas.getContext("2d");
+
+		ctx3.fillRect (285,175,5,25);
+		ctx3.fillRect (295,175,5,25);
+	}
+	function drawFace()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx4 = myCanvas.getContext("2d");
+
+		ctx4.fillRect (300,50,75,75);
+		ctx4.clearRect(315,65,10,10);
+		ctx4.clearRect(350,65,10,10);
+	}
+	function drawEars()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx5 = myCanvas.getContext("2d");	
+
+		ctx5.fillRect(305,35,10,15);
+		ctx5.strokeRect(300,30,20,20);
+		ctx5.clearRect();
+	}
+	355,30,20,22
+		ctx.fillRect (20,20,100,100);
+		ctx.strokeRect(10,10,120,120);
+		ctx.clearRect(45,45,50,50);
+
+		ctx.beginPath();
+		ctx.arc(325,90,8,0,2*Math.PI);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(315,95,10,0,1*Math.PI);
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.arc(335,95,10,0,1*Math.PI);
+		ctx.stroke();
+	
+</script>
+<title>
+Canvas Mammal
+</title>
+</head>
+
+<body onload="drawBody(); drawLegs1(); drawLegs2(); drawFace(); drawEars();">
+
+<canvas id="myCanvas" width="400" height="200">
+</canvas>
+
+
+</body>
+</html>
