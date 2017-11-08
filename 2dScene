@@ -1,0 +1,52 @@
+<html>
+<head>
+<script type="text/javascript">
+	function sky()
+	{
+		var myCanvas= document.getElementById("myCanvas")
+		var ctx = myCanvas.getContext("2d");
+
+		ctx.strokeRect(0,0,2000,1000);
+		ctx.fillStyle = "#99E5FF";
+		ctx.fillRect(0,0,2000,700);
+		ctx.fill();
+	}
+	function grass()
+	{
+		var myCanvas= document.getElementById("myCanvas")
+		var ctx2 = myCanvas.getContext("2d");
+	
+		ctx2.fillStyle = "#567d46";
+		ctx2.fillRect(0,700,2000,300);
+		ctx2.fill();
+	}
+	function pipe()
+	{
+		var myCanvas= document.getElementById("myCanvas")
+		var ctx3 = myCanvas.getContext("2d");
+
+		ctx3.fillStyle = " #567d46";
+		ctx3.fillRect(300,400,150,300);
+		ctx3.fill();
+	}
+		
+		ctx2.arc(250,250,100,0,2*Math.PI)
+		ctx2.lineWidth = "10"
+		ctx2.strokeStyle= "blue";
+		ctx2.fillStyle = "red";
+		ctx2.fill();
+		ctx2.stroke();
+		ctx2.fillStyle= "blue";
+		ctx2.lineJoin = "round";
+		ctx2.fillRect=(250,250,100,100);
+</script>
+
+<title>
+2d Scene
+</title>
+</head>
+
+<body onload="sky(); grass(); pipe();">
+<canvas id="myCanvas" width="2000" height="1000">
+</body>
+</html>
