@@ -26,7 +26,7 @@
 		var ctx4 = myCanvas.getContext("2d");
 
 		ctx4.lineWidth= "5";
-		ctx4.strokeStyle= "#8b4513";
+		ctx4.strokeStyle= "#655244";
 		ctx4.strokeRect(410,350,50,50);
 		ctx4.stroke();
 		
@@ -110,6 +110,96 @@
 		ctx4.fillRect(450,390,10,10);
 		ctx4.fill();
 	}
+	function block2()
+	{
+		var myCanvas= document.getElementById("myCanvas")
+		var ctx5 = myCanvas.getContext("2d");
+
+		ctx5.lineWidth= "5";
+		ctx5.strokeStyle= "#655244";
+		ctx5.strokeRect(460,350,50,50);
+		ctx5.stroke();
+		
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(460,350,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(470,350,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(480,350,10,10);
+		ctx5.fill()
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(490,350,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(500,350,10,10);
+		ctx5.fill();
+
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(460,360,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(470,360,10,10);
+		ctx5.fill()
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(480,360,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(490,360,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(500,360,10,10);
+		ctx5.fill();
+
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(460,370,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(470,370,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(480,370,10,10);
+		ctx5.fill()
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(490,370,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(500,370,10,10);
+		ctx5.fill();
+
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(460,380,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(470,380,10,10);
+		ctx5.fill()
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(480,380,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(490,380,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(500,380,10,10);
+		ctx5.fill();
+
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(460,390,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(470,390,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(480,390,10,10);
+		ctx5.fill()
+		ctx5.fillStyle = "#984b14";
+		ctx5.fillRect(490,390,10,10);
+		ctx5.fill();
+		ctx5.fillStyle = "#8b4513";
+		ctx5.fillRect(500,390,10,10);
+		ctx5.fill();
+	}
 	function pipe()
 	{
 		var myCanvas= document.getElementById("myCanvas")
@@ -143,7 +233,7 @@
 </title>
 </head>
 
-<body onload="sky(); grass(); block1(); pipe();">
+<body onload="sky(); grass(); block1(); block2(); pipe();">
 <canvas id="myCanvas" width="2000" height="1000">
 </body>
 </html>
