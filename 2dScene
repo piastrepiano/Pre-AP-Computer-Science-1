@@ -20,13 +20,30 @@
 		ctx2.fillRect(0,700,1500,300);
 		ctx2.fill();
 	}
+	function pipe()
+	{
+		var myCanvas= document.getElementById("myCanvas")
+		var ctx3 = myCanvas.getContext("2d");
+
+		ctx3.fillStyle = "#567d46";
+		ctx3.fillRect(200,500,100,200);
+		ctx3.fill();
+		
+		ctx3.beginPath();
+		ctx3.arc(250,500,50,0,2*Math.PI);
+		ctx3.lineWidth = "10";
+		ctx3.strokeStyle = "#567d46";
+		ctx3.fillStyle = "green";
+		ctx3.fill();
+		ctx3.stroke();
+	}
 	function block1()
 	{
 		var myCanvas= document.getElementById("myCanvas")
 		var ctx4 = myCanvas.getContext("2d");
 
 		ctx4.lineWidth= "5";
-		ctx4.strokeStyle= "#655244";
+		ctx4.strokeStyle= "#A0522D";
 		ctx4.strokeRect(410,350,50,50);
 		ctx4.stroke();
 		
@@ -116,7 +133,7 @@
 		var ctx5 = myCanvas.getContext("2d");
 
 		ctx5.lineWidth= "5";
-		ctx5.strokeStyle= "#655244";
+		ctx5.strokeStyle= "#A0522D";
 		ctx5.strokeRect(460,350,50,50);
 		ctx5.stroke();
 		
@@ -200,23 +217,136 @@
 		ctx5.fillRect(500,390,10,10);
 		ctx5.fill();
 	}
-	function pipe()
+	function block3()
 	{
 		var myCanvas= document.getElementById("myCanvas")
-		var ctx3 = myCanvas.getContext("2d");
+		var ctx6 = myCanvas.getContext("2d");
 
-		ctx3.fillStyle = "#567d46";
-		ctx3.fillRect(200,500,100,200);
-		ctx3.fill();
+		ctx6.lineWidth= "5";
+		ctx6.strokeStyle= "#A0522D";
+		ctx6.strokeRect(510,350,50,50);
+		ctx6.stroke();
 		
-		ctx3.arc(250,500,50,0,2*Math.PI);
-		ctx3.lineWidth = "10";
-		ctx3.strokeStyle = "#567d46";
-		ctx3.fillStyle = "green";
-		ctx3.fill();
-		ctx3.stroke();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(510,350,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(520,350,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(530,350,10,10);
+		ctx6.fill()
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(540,350,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(550,350,10,10);
+		ctx6.fill();
+
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(510,360,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(520,360,10,10);
+		ctx6.fill()
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(530,360,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(540,360,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(550,360,10,10);
+		ctx6.fill();
+
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(510,370,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(520,370,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(530,370,10,10);
+		ctx6.fill()
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(540,370,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(550,370,10,10);
+		ctx6.fill();
+
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(510,380,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(520,380,10,10);
+		ctx6.fill()
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(530,380,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(540,380,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(550,380,10,10);
+		ctx6.fill();
+
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(510,390,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(520,390,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(530,390,10,10);
+		ctx6.fill()
+		ctx6.fillStyle = "#984b14";
+		ctx6.fillRect(540,390,10,10);
+		ctx6.fill();
+		ctx6.fillStyle = "#8b4513";
+		ctx6.fillRect(550,390,10,10);
+		ctx6.fill();
 	}
+	function bush()
+	{
+		var myCanvas= document.getElementById("myCanvas")
+		var ctx7 = myCanvas.getContext("2d");
 		
+		ctx7.beginPath();
+		ctx7.fillStyle= "#103B1D";
+		ctx7.arc(1200,650,45,0,2*Math.PI);
+		ctx7.fill();
+
+		ctx7.beginPath();
+		ctx7.fillStyle= "#103B1D";
+		ctx7.arc(1160,650,35,0.5,2*Math.PI);
+		ctx7.fill();
+
+		ctx7.beginPath();
+		ctx7.fillStyle= "#103B1D";
+		ctx7.arc(1240,650,35,0,2*Math.PI);
+		ctx7.fill();
+		ctx7.beginPath();
+		ctx7.fillStyle= "#103B1D";
+		ctx7.arc(1140,700,45,Math.PI,2*Math.PI);
+		ctx7.fill();
+		ctx7.beginPath();
+		ctx7.fillStyle= "#103B1D";
+		ctx7.arc(1180,700,45,Math.PI,2*Math.PI);
+		ctx7.fill();
+		ctx7.beginPath();
+		ctx7.fillStyle= "#103B1D";
+		ctx7.arc(1260,700,45,Math.PI,2*Math.PI);
+		ctx7.fill();
+	}
+	function cloud()
+	{
+		var myCanvas= document.getElementById("myCanvas")
+		var ctx8 = myCanvas.getContext("2d");
+
+		ctx8.beginPath();
+		ctx8
+	}
 		ctx2.arc(250,250,50,8,0,175)
 		ctx2.lineWidth = "10"
 		ctx2.strokeStyle= "blue";
@@ -233,7 +363,7 @@
 </title>
 </head>
 
-<body onload="sky(); grass(); block1(); block2(); pipe();">
+<body onload="sky(); grass(); block1(); block2(); block3(); pipe(); bush();">
 <canvas id="myCanvas" width="2000" height="1000">
 </body>
 </html>
