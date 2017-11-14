@@ -6,9 +6,8 @@
 		var myCanvas= document.getElementById("myCanvas")
 		var ctx = myCanvas.getContext("2d");
 
-		ctx.strokeRect(0,0,2000,1000);
 		ctx.fillStyle = "#99E5FF";
-		ctx.fillRect(0,0,1500,700);
+		ctx.fillRect(0,0,1400,700);
 		ctx.fill();
 	}
 	function grass()
@@ -17,7 +16,7 @@
 		var ctx2 = myCanvas.getContext("2d");
 	
 		ctx2.fillStyle = "#567d46";
-		ctx2.fillRect(0,700,1500,300);
+		ctx2.fillRect(0,700,1400,300);
 		ctx2.fill();
 	}
 	function pipe()
@@ -314,29 +313,29 @@
 		
 		ctx7.beginPath();
 		ctx7.fillStyle= "#103B1D";
-		ctx7.arc(1200,650,45,0,2*Math.PI);
+		ctx7.arc(1000,650,45,0,2*Math.PI);
 		ctx7.fill();
 
 		ctx7.beginPath();
 		ctx7.fillStyle= "#103B1D";
-		ctx7.arc(1160,650,35,0.5,2*Math.PI);
+		ctx7.arc(960,650,35,0.5,2*Math.PI);
 		ctx7.fill();
 
 		ctx7.beginPath();
 		ctx7.fillStyle= "#103B1D";
-		ctx7.arc(1240,650,35,0,2*Math.PI);
+		ctx7.arc(1040,650,35,0,2*Math.PI);
 		ctx7.fill();
 		ctx7.beginPath();
 		ctx7.fillStyle= "#103B1D";
-		ctx7.arc(1140,700,45,Math.PI,2*Math.PI);
+		ctx7.arc(940,700,45,Math.PI,2*Math.PI);
 		ctx7.fill();
 		ctx7.beginPath();
 		ctx7.fillStyle= "#103B1D";
-		ctx7.arc(1180,700,45,Math.PI,2*Math.PI);
+		ctx7.arc(980,700,45,Math.PI,2*Math.PI);
 		ctx7.fill();
 		ctx7.beginPath();
 		ctx7.fillStyle= "#103B1D";
-		ctx7.arc(1260,700,45,Math.PI,2*Math.PI);
+		ctx7.arc(1060,700,45,Math.PI,2*Math.PI);
 		ctx7.fill();
 	}
 	function cloud()
@@ -345,17 +344,48 @@
 		var ctx8 = myCanvas.getContext("2d");
 
 		ctx8.beginPath();
-		ctx8
+		ctx8.fillStyle= "white";
+		ctx8.arc(720,130,25,0,2*Math.PI);
+		ctx8.fill();
+		ctx8.beginPath();
+		ctx8.fillStyle="white";
+		ctx8.arc(760,130,35,0,2*Math.PI);
+		ctx8.fill();
+		ctx8.beginPath();
+		ctx8.fillStyle="white";
+		ctx8.arc(820,130,45,0,2*Math.PI);
+		ctx8.fill();
+		ctx8.beginPath();
+		ctx8.fillStyle="white";
+		ctx8.arc(860,150,35,0,2*Math.PI);
+		ctx8.fill();
+		ctx8.beginPath();
+		ctx8.fillStyle="white";
+		ctx8.arc(830,170,35,0,2*Math.PI);
+		ctx8.fill();
+		ctx8.beginPath();
+		ctx8.fillStyle="white";
+		ctx8.arc(780,170,45,0,2*Math.PI);
+		ctx8.fill();
+		ctx8.beginPath();
+		ctx8.fillStyle="white";
+		ctx8.arc(730,170,35,0,2*Math.PI);
+		ctx8.fill();
 	}
-		ctx2.arc(250,250,50,8,0,175)
-		ctx2.lineWidth = "10"
-		ctx2.strokeStyle= "blue";
-		ctx2.fillStyle = "red";
-		ctx2.fill();
-		ctx2.stroke();
-		ctx2.fillStyle= "blue";
-		ctx2.lineJoin = "round";
-		ctx2.fillRect=(250,250,100,100);
+	function sun()
+	{
+		var myCanvas= document.getElementById("myCanvas")
+		var ctx9 = myCanvas.getContext("2d");
+
+		ctx9.beginPath();
+		ctx9.fillStyle="#FDB813";
+		ctx9.arc(180,100,65,0,2*Math.PI);
+		ctx9.fill();
+
+		ctx9.fillStyle();
+		ctx9.fillRect();
+		ctx9.fill();
+	}
 </script>
 
 <title>
@@ -363,7 +393,7 @@
 </title>
 </head>
 
-<body onload="sky(); grass(); block1(); block2(); block3(); pipe(); bush();">
+<body onload="sky(); grass(); block1(); block2(); block3(); pipe(); bush(); cloud(); sun();">
 <canvas id="myCanvas" width="2000" height="1000">
 </body>
 </html>
