@@ -3,12 +3,12 @@ var canvas= document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 1037;
 canvas.height = 532;
-document.body.apprendChild(canvas);
+document.body.appendChild(canvas);
 
 //create sprite
-var heroReady = false
+var heroReady = false;
 var heroImage= new Image();
-heroImage.onload = function();
+heroImage.onload = function()
 	{
 		heroReady = true;
 	};
@@ -24,12 +24,12 @@ var hero =
 var keysDown = {};
 
 
-addEventListener("keydown", function {e}
+addEventListener("keydown", function (e)
 	{
 		keysDown[e.keyCode] = true;
 	}, false);
 
-addEventListener("keyup", function {e}
+addEventListener("keyup", function (e)
 	{
 		delete keysDown[e.keyCode];
 	}, false);
@@ -61,14 +61,16 @@ var update = function(modifier)
 	};
 
 //Draw everything
-var render = function{}
+var render = function ()
 	{
 		if (heroReady)
+		{
 			ctx.drawImage(heroImage, hero.x, hero.y);
+		}
 	};
 
 //Main Game Loop
-var main = function {}
+var main = function ()
 	{
 		var now = Date.now();
 		var delta = now - then;
@@ -83,8 +85,10 @@ var main = function {}
 
 //Cross-browser support for requestAnimationFrame
 var w = window;
-requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame ||w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
-
+requestAnimationFrame = w.requestAnimationFrame||
+			w.webkitRequestAnimationFrame||
+			w.msRequestAnimationFrame ||
+			w.mozRequestAnimationFrame; 
 //Finally lets play this thing
 var then = Date.now();
 reset();
