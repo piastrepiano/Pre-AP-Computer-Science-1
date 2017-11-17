@@ -5,7 +5,7 @@ canvas.width = 1037;
 canvas.height = 532;
 document.body.appendChild(canvas);
 
-//create sprite
+//Create Sprite
 var heroReady = false;
 var heroImage= new Image();
 heroImage.onload = function()
@@ -13,6 +13,15 @@ heroImage.onload = function()
 		heroReady = true;
 	};
 heroImage.src = "images/kirby.png";
+
+//Background Image
+var bgReady = false;
+var bgImage = new Image();
+bgImage.onload = function()
+	{
+		bgReady = true;
+	};
+bgImage.src = "images/GameBackground.png";
 
 //Game Object
 var hero =
@@ -63,6 +72,10 @@ var update = function(modifier)
 //Draw everything
 var render = function ()
 	{
+		if (bgReady)
+		{
+			ctx.drawImage(bgImage,0,0);
+		}
 		if (heroReady)
 		{
 			ctx.drawImage(heroImage, hero.x, hero.y);
