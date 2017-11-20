@@ -1,18 +1,28 @@
 //create canvas
 var canvas= document.createElement("canvas");
 var ctx = canvas.getContext("2d");
+var ctz = canvas.getContext("2d");
 canvas.width = 1037;
 canvas.height = 532;
 document.body.appendChild(canvas);
 
 //Create Sprite
 var heroReady = false;
-var heroImage= new Image();
+var heroImage = new Image();
 heroImage.onload = function()
 	{
 		heroReady = true;
 	};
-heroImage.src = "images/kirby.png";
+heroImage.src = "Images/kirby.png";
+
+//Create Monster
+var monsterReady = false;
+var monsterImage = new Image();
+monsterImage.onload = function()
+	{
+		monsterReady = true;
+	};
+monsterImage.src = "Images/monster.png";
 
 //Background Image
 var bgReady = false;
@@ -21,12 +31,16 @@ bgImage.onload = function()
 	{
 		bgReady = true;
 	};
-bgImage.src = "images/GameBackground.png";
+bgImage.src = "Images/GameBackground.png";
 
 //Game Object
 var hero =
 	{
 		speed: 256 //movement is pixels/sec
+	};
+var monster = 
+	{
+		speed: 256
 	};
 
 //keyboard controls
@@ -43,11 +57,15 @@ addEventListener("keyup", function (e)
 		delete keysDown[e.keyCode];
 	}, false);
 
+
 //Reset Game
 var reset = function ()
 	{
 		hero.x = canvas.width/2;
 		hero.y = canvas.height/2;
+
+		monster.x = (Math.random() * (canvas.width-74));
+		monster.y = (Math.random() * (canvas.height-74));
 	};
 
 //Update game objects
@@ -72,6 +90,7 @@ var update = function(modifier)
 //Draw everything
 var render = function ()
 	{
+		
 		if (bgReady)
 		{
 			ctx.drawImage(bgImage,0,0);
@@ -79,6 +98,10 @@ var render = function ()
 		if (heroReady)
 		{
 			ctx.drawImage(heroImage, hero.x, hero.y);
+		}
+		if (monsterReady)
+		{
+			ctx.drawImage(monsterImage, monster.x, monster.y);
 		}
 	};
 
