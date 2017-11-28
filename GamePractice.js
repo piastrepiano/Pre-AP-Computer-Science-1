@@ -21,7 +21,7 @@ monsterImage.onload = function()
 	{
 		monsterReady = true;
 	};
-monsterImage.src = "images/snorlax.png";
+monsterImage.src = "images/monster.png";
 
 //Background Image
 var bgReady = false;
@@ -61,8 +61,8 @@ var reset = function ()
 		hero.y = canvas.height/2;
 
 	//Put monster on canvas		
-		monster.x = 52 + (Math.random() * (canvas.width-84));
-		monster.y = 52 + (Math.random() * (canvas.height-84));
+		monster.x = 100 + (Math.random() * (canvas.width-200));
+		monster.y = 100 + (Math.random() * (canvas.height-200));
 	};
 
 //Update game objects
