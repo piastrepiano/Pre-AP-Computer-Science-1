@@ -60,8 +60,8 @@ var reset = function ()
 		hero.x = canvas.width/2;
 		hero.y = canvas.height/2;
 
-//Put monster on canvas		
-if (monstersCaught < 10)
+//Put monster randomly on canvas		
+if (monsterCaught < 10)
 {
 	monster.x = 150 + (Math.random() * (canvas.width-200));
 	monster.y = 150 + (Math.random() * (canvas.height-200));
