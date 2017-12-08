@@ -48,8 +48,6 @@ var hero =
 	};
 var object = {};
 var objectCaught = 0;
-var monster = {};
-var monsterCaught = 0;
 
 //keyboard controls
 var keysDown = {};
@@ -93,22 +91,6 @@ var checkWin = function()
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText("Let's Go!", canvas.width/2, canvas.height/2);
-}
-
-//put monster randomly on canvas
-	if (objectCaught=10) {
-		monster.x = 150 + (Math.random() * (canvas.width-200));
-		monster.y = 150 + (Math.random() * (canvas.width-200));
-}
-	if (monsterCaught>=10) {
-		monster.x = 150 + (Math.random() * (canvas.width-200));
-		monster.y = 150 + (Math.random() * (canvas.width-200));
-}
-else 
-{
-	//renderWin();
-	monster.x = canvas.width + 200;
-	monster.y = canvas.height + 200;
 }
 };
 
