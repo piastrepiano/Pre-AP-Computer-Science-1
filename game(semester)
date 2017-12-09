@@ -5,6 +5,10 @@ canvas.width = 512;
 canvas.height = 480;
 document.body.appendChild(canvas);
 
+//boolean
+var stageOne = false;
+var appearance = true;
+
 //Create Sprite
 var heroReady = false;
 var heroImage= new Image();
@@ -30,7 +34,7 @@ objectImage.onload = function()
 	{
 		objectReady = true;
 	};
-objectImage.src = "images/BambooPiskel.png";
+objectImage.src = "images/Bamboo.png";
 
 //Background Image
 var bgReady = false;
@@ -46,8 +50,14 @@ var hero =
 	{
 		speed: 256 //movement is pixels/sec
 	};
+
+//object
 var object = {};
 var objectCaught = 0;
+
+//monster
+var monster = {};
+var monsterCaught = 0;
 
 //keyboard controls
 var keysDown = {};
@@ -75,15 +85,46 @@ if (objectCaught < 10)
 	object.x = 150 + (Math.random() * (canvas.width-200));
 	object.y = 150 + (Math.random() * (canvas.height-200));
 }
-else
+else 
 {
 	//renderWin();
 	object.x = canvas.width + 200;
 	object.y = canvas.height + 200;
+	stageOne = true;
+}
+
+//Put monster randomly on canvas stage1		
+if (monsterCaught < 10)
+{
+	monster.x = 150 + (Math.random() * (canvas.width-200));
+	monster.y = 150 + (Math.random() * (canvas.height-200));
+}
+else 
+{
+	//renderWin();
+	monster.x = canvas.width + 200;
+	monster.y = canvas.height + 200;
+}
+	
+
+//put monster randomly on canvas stage2
+if (monsterCaught < 3)
+{
+	monster.x = 150 + (Math.random() * (canvas.width-200));
+	monster.y = 150 + (Math.random() * (canvas.height-200));
+}
+else 
+{
+	//renderLose();
+	monster.x = canvas.width + 200;
+	monster.y = canvas.height + 200;
+
+	object.x = canvas.width + 200;
+	object.y = canvas.width + 200;
 }
 	};
 
-var checkWin = function() 
+var checkFight = function() 
 {
 	if(objectCaught>=10) {
 		ctx.fillStyle = "rgb(10,10,10)";
@@ -92,6 +133,17 @@ var checkWin = function()
 		ctx.textBaseline = "top";
 		ctx.fillText("Let's Go!", canvas.width/2, canvas.height/2);
 }
+};
+
+var checkLose = function()
+{
+	if(monsterCaught>=3) {
+		ctx.fillStyle = "rgb(10,10,10)";
+		ctx.font = "24px Helvetica";
+		ctx.textAlign = "center";
+		ctx.textBaseline = "top";
+		ctx.fillText("You Lose!", canvas.width/2, canvas.height/2);
+} 
 };
 
 //Update game objects
@@ -114,6 +166,7 @@ var update = function(modifier)
 			hero.x += hero.speed * modifier;
 		}
 	//Are they touching?
+		//object & hero
 		if (
 			hero.x <= (object.x + 52)
 			&& object.x <= (hero.x + 52)
@@ -123,6 +176,30 @@ var update = function(modifier)
 		{
 			++objectCaught;
 			reset ();
+		}
+		//monster & hero win
+		if (
+			hero.x <= (monster.x + 52)
+			&& monster.x <= (hero.x + 52)
+			&& hero.y <= (monster.y + 52)
+			&& monster.y <= (hero.y + 52)
+			&& stageOne
+		)
+		{
+			++monsterCaught;
+			reset ();
+		} 
+		//monster & hero lose
+		 if (hero.x <= (monster.x + 52)
+			&& monster.x <= (hero.x + 52)
+			&& hero.y <= (monster.y + 52)
+			&& monster.y <= (hero.y + 52)
+			&& !stageOne
+		)
+		{
+			++monsterCaught;
+			reset ();
+			
 		}
 	};
 
@@ -141,12 +218,22 @@ var render = function ()
 		{
 			ctx.drawImage(objectImage, object.x, object.y);
 		}
+		if(monsterReady)
+		{
+			ctx.drawImage(monsterImage, monster.x, monster.y);
+		}
 		//Score
 		ctx.fillStyle = "rgb(250,250,250)";
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "left";
 		ctx.textBaseline= "top";
 		ctx.fillText("Object caught: " + objectCaught,32,32);
+
+		ctx.fillStyle = "rgb(250,250,250)";
+		ctx.font = "24px Helvetica";
+		ctx.textAlign = "left";
+		ctx.textBaseline= "top";
+		ctx.fillText("Monsters Caught: " + monsterCaught,250,32);
 	};
 
 //Main Game Loop
@@ -157,7 +244,8 @@ var main = function ()
 
 		update(delta/1000);
 		render();
-		checkWin();
+		checkFight();
+		checkLose();
 	
 		then = now;
 
