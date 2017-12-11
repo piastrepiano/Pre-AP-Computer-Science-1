@@ -1,3 +1,8 @@
+//10 items collect    done
+//hit monster before lose  done
+//hit monster to win
+//sound: touch object,touch monster,bg music  done
+
 //create canvas
 var canvas= document.createElement("canvas");
 var ctx = canvas.getContext("2d");
@@ -34,7 +39,7 @@ objectImage.onload = function()
 	{
 		objectReady = true;
 	};
-objectImage.src = "images/Bamboo.png";
+objectImage.src = "images/BambooPiskel.png";
 
 //Background Image
 var bgReady = false;
@@ -44,6 +49,11 @@ bgImage.onload = function()
 		bgReady = true;
 	};
 bgImage.src = "images/bgPiskels.png";
+
+//sound
+var mySound= new Audio("sounds/bite.mp3"); //eat sound
+var myMusic = new Audio("sounds/bgMusic.mp3"); //bg sound
+var mySounds = new Audio("sounds/attack.mp3"); //attack monster sound
 
 //Game Object
 var hero =
@@ -127,6 +137,7 @@ else
 var checkFight = function() 
 {
 	if(objectCaught>=10) {
+		myMusic.volume = 0;  //stops music when won
 		ctx.fillStyle = "rgb(10,10,10)";
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "center";
@@ -174,6 +185,7 @@ var update = function(modifier)
 			&& object.y <= (hero.y + 52)
 		)
 		{
+			mySound.play();
 			++objectCaught;
 			reset ();
 		}
@@ -197,6 +209,7 @@ var update = function(modifier)
 			&& !stageOne
 		)
 		{
+			mySounds.play();
 			++monsterCaught;
 			reset ();
 			
@@ -260,5 +273,6 @@ requestAnimationFrame = w.requestAnimationFrame||
 			w.mozRequestAnimationFrame; 
 //Finally lets play this thing
 var then = Date.now();
+myMusic.play(); //bg music
 reset();
 main();
