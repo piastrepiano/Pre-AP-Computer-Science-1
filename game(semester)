@@ -185,7 +185,7 @@ var update = function(modifier)
 			&& object.y <= (hero.y + 52)
 		)
 		{
-			mySound.play();
+			mySound.play();   //sound when object is collected
 			++objectCaught;
 			reset ();
 		}
@@ -209,7 +209,7 @@ var update = function(modifier)
 			&& !stageOne
 		)
 		{
-			mySounds.play();
+			mySounds.play();   //sound when monster caught
 			++monsterCaught;
 			reset ();
 			
