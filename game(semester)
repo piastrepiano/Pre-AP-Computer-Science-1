@@ -12,7 +12,7 @@ document.body.appendChild(canvas);
 
 //boolean
 var stageOne = false;
-var appearance = true;
+var stageTwo = false;
 
 //Create Sprite
 var heroReady = false;
@@ -97,25 +97,14 @@ if (objectCaught < 10)
 }
 else 
 {
-	//renderWin();
+	//renderFight();
 	object.x = canvas.width + 200;
 	object.y = canvas.height + 200;
 	stageOne = true;
-}
 
-//Put monster randomly on canvas stage1		
-if (monsterCaught < 10)
-{
-	monster.x = 150 + (Math.random() * (canvas.width-200));
-	monster.y = 150 + (Math.random() * (canvas.height-200));
-}
-else 
-{
-	//renderWin();
-	monster.x = canvas.width + 200;
-	monster.y = canvas.height + 200;
-}
-	
+	//monster.x = canvas.width + 200;
+	//monster.y = canvas.width + 200;
+}	
 
 //put monster randomly on canvas stage2
 if (monsterCaught < 3)
@@ -137,7 +126,6 @@ else
 var checkFight = function() 
 {
 	if(objectCaught>=10) {
-		myMusic.volume = 0;  //stops music when won
 		ctx.fillStyle = "rgb(10,10,10)";
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "center";
@@ -149,11 +137,43 @@ var checkFight = function()
 var checkLose = function()
 {
 	if(monsterCaught>=3) {
+		myMusic.volume = 0;  //stops music when lost
 		ctx.fillStyle = "rgb(10,10,10)";
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText("You Lose!", canvas.width/2, canvas.height/2);
+} 
+};
+
+var stageTworeset = function()
+{
+	hero.x = canvas.width/2;
+	hero.y = canvas.height/2;
+
+//Put monster randomly on canvas stage1		
+if (monsterCaught < 5)
+{
+	monster.x = 150 + (Math.random() * (canvas.width-200));
+	monster.y = 150 + (Math.random() * (canvas.height-200));
+}
+else 
+{
+	//renderWin();
+	monster.x = canvas.width + 200;
+	monster.y = canvas.height + 200;
+	stageTwo = true;
+}
+};
+
+var checkWin = function()
+{
+	if(monsterCaught>=5) {
+		ctx.fillStyle = "rgb(10,10,10)";
+		ctx.font = "24px Helvetica";
+		ctx.textAlign = "center";
+		ctx.textBaseline = "top";
+		ctx.fillText("You Win!", canvas.width/2, canvas.height/2);
 } 
 };
 
@@ -195,11 +215,12 @@ var update = function(modifier)
 			&& monster.x <= (hero.x + 52)
 			&& hero.y <= (monster.y + 52)
 			&& monster.y <= (hero.y + 52)
-			&& stageOne
+			&& !stageTwo
 		)
 		{
 			++monsterCaught;
-			reset ();
+			//reset();
+			stageTworeset();
 		} 
 		//monster & hero lose
 		 if (hero.x <= (monster.x + 52)
@@ -259,6 +280,7 @@ var main = function ()
 		render();
 		checkFight();
 		checkLose();
+		checkWin();
 	
 		then = now;
 
@@ -275,4 +297,5 @@ requestAnimationFrame = w.requestAnimationFrame||
 var then = Date.now();
 myMusic.play(); //bg music
 reset();
+stageTworeset();
 main();
