@@ -6,6 +6,7 @@
 //create canvas
 var canvas= document.createElement("canvas");
 var ctx = canvas.getContext("2d");
+
 canvas.width = 512;
 canvas.height = 480;
 document.body.appendChild(canvas);
@@ -106,13 +107,13 @@ else
 	//monster.y = canvas.width + 200;
 }	
 
-//put monster randomly on canvas stage2
-if (monsterCaught < 3)
+//put monster randomly on canvas within stage1
+if (monsterCaught < 3 && stageOne == false)
 {
 	monster.x = 150 + (Math.random() * (canvas.width-200));
 	monster.y = 150 + (Math.random() * (canvas.height-200));
 }
-else 
+else if(monsterCaught >= 3 && stageOne == false)
 {
 	//renderLose();
 	monster.x = canvas.width + 200;
@@ -131,12 +132,13 @@ var checkFight = function()
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
 		ctx.fillText("Let's Go!", canvas.width/2, canvas.height/2);
+		stageOne = true;//finished stage one
 }
 };
 
 var checkLose = function()
 {
-	if(monsterCaught>=3) {
+	if(monsterCaught>=3 && stageOne == false) {
 		myMusic.volume = 0;  //stops music when lost
 		ctx.fillStyle = "rgb(10,10,10)";
 		ctx.font = "24px Helvetica";
@@ -169,6 +171,8 @@ else
 var checkWin = function()
 {
 	if(monsterCaught>=5) {
+		ctx.clearRect(0,0, canvas.width/2, canvas.height/2);
+		render();
 		ctx.fillStyle = "rgb(10,10,10)";
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "center";
@@ -215,9 +219,10 @@ var update = function(modifier)
 			&& monster.x <= (hero.x + 52)
 			&& hero.y <= (monster.y + 52)
 			&& monster.y <= (hero.y + 52)
-			&& !stageTwo
+			&& stageTwo == false
 		)
 		{
+			mySounds.play(); 
 			++monsterCaught;
 			//reset();
 			stageTworeset();
@@ -227,7 +232,7 @@ var update = function(modifier)
 			&& monster.x <= (hero.x + 52)
 			&& hero.y <= (monster.y + 52)
 			&& monster.y <= (hero.y + 52)
-			&& !stageOne
+			&& stageOne == false
 		)
 		{
 			mySounds.play();   //sound when monster caught
