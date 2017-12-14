@@ -89,7 +89,7 @@ var reset = function ()
 	{
 		hero.x = canvas.width/2;
 		hero.y = canvas.height/2;
-
+ 
 //Put object randomly on canvas		
 if (objectCaught < 10)
 {
@@ -139,6 +139,11 @@ var checkFight = function()
 var checkLose = function()
 {
 	if(monsterCaught>=3 && stageOne == false) {
+		monster.x = canvas.width + 200;
+		monster.y = canvas.height + 200;
+
+		object.x = canvas.width + 200;
+		object.y = canvas.width + 200;
 		myMusic.volume = 0;  //stops music when lost
 		ctx.fillStyle = "rgb(10,10,10)";
 		ctx.font = "24px Helvetica";
