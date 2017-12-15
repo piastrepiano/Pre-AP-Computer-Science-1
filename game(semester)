@@ -93,8 +93,8 @@ var reset = function ()
 //Put object randomly on canvas		
 if (objectCaught < 10)
 {
-	object.x = 150 + (Math.random() * (canvas.width-200));
-	object.y = 150 + (Math.random() * (canvas.height-200));
+	object.x = 125 + (Math.random() * (canvas.width-350));
+	object.y = 125 + (Math.random() * (canvas.height-350));
 }
 else 
 {
@@ -102,16 +102,13 @@ else
 	object.x = canvas.width + 200;
 	object.y = canvas.height + 200;
 	stageOne = true;
-
-	//monster.x = canvas.width + 200;
-	//monster.y = canvas.width + 200;
 }	
 
 //put monster randomly on canvas within stage1
 if (monsterCaught < 3 && stageOne == false)
 {
-	monster.x = 150 + (Math.random() * (canvas.width-200));
-	monster.y = 150 + (Math.random() * (canvas.height-200));
+	monster.x = 150 + (Math.random() * (canvas.width-300));
+	monster.y = 150 + (Math.random() * (canvas.height-300));
 }
 else if(monsterCaught >= 3 && stageOne == false)
 {
@@ -208,10 +205,10 @@ var update = function(modifier)
 	//Are they touching?
 		//object & hero
 		if (
-			hero.x <= (object.x + 52)
-			&& object.x <= (hero.x + 52)
-			&& hero.y <= (object.y + 52)
-			&& object.y <= (hero.y + 52)
+			hero.x <= (object.x + 32)
+			&& object.x <= (hero.x + 32)
+			&& hero.y <= (object.y + 32)
+			&& object.y <= (hero.y + 32)
 		)
 		{
 			mySound.play();   //sound when object is collected
@@ -220,10 +217,10 @@ var update = function(modifier)
 		}
 		//monster & hero win
 		if (
-			hero.x <= (monster.x + 52)
-			&& monster.x <= (hero.x + 52)
-			&& hero.y <= (monster.y + 52)
-			&& monster.y <= (hero.y + 52)
+			hero.x <= (monster.x + 32)
+			&& monster.x <= (hero.x + 32)
+			&& hero.y <= (monster.y + 32)
+			&& monster.y <= (hero.y + 32)
 			&& stageTwo == false
 		)
 		{
@@ -233,10 +230,10 @@ var update = function(modifier)
 			stageTworeset();
 		} 
 		//monster & hero lose
-		 if (hero.x <= (monster.x + 52)
-			&& monster.x <= (hero.x + 52)
-			&& hero.y <= (monster.y + 52)
-			&& monster.y <= (hero.y + 52)
+		 if (hero.x <= (monster.x + 32)
+			&& monster.x <= (hero.x + 32)
+			&& hero.y <= (monster.y + 32)
+			&& monster.y <= (hero.y + 32)
 			&& stageOne == false
 		)
 		{
