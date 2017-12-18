@@ -131,6 +131,7 @@ var checkFight = function()
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "center";
 		ctx.textBaseline = "top";
+		ctx.strokeText("Let's Go!", canvas.width/2, canvas.height/2);
 		ctx.fillText("Let's Go!", canvas.width/2, canvas.height/2);
 		stageOne = true;//finished stage one
 }
@@ -281,12 +282,14 @@ var render = function ()
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "left";
 		ctx.textBaseline= "top";
-		ctx.fillText("Object caught: " + objectCaught,32,32);
+		ctx.strokeText("Object Caught: " + objectCaught,32,32);
+		ctx.fillText("Object Caught: " + objectCaught,32,32);
 
 		ctx.fillStyle = "rgb(250,250,250)";
 		ctx.font = "24px Helvetica";
 		ctx.textAlign = "left";
 		ctx.textBaseline= "top";
+		ctx.strokeText("Monsters Caught: " + monsterCaught,250,32);
 		ctx.fillText("Monsters Caught: " + monsterCaught,250,32);
 	};
 
