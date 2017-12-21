@@ -25,7 +25,6 @@ var stageTwo = false;
 var onePlay = false;
 var win = false;
 var lose = false;
-var disappear = false;
 
 //Create Sprite
 var heroReady = false;
