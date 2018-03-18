@@ -116,6 +116,7 @@ def player_turn(p1, p2, uses):
 
 
 def main():
+    shuffled_deck()
     player_turn(get_name(1), get_name(2), 0)
 
 
