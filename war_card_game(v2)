@@ -1,0 +1,72 @@
+import random
+
+
+def shuffled_deck():
+    basic_deck = list(range(2, 15)) * 4
+    random.shuffle(basic_deck)
+    return basic_deck
+deck = shuffled_deck()
+player1Score = 0
+player2Score = 0
+player1 = input("What is player 1 name?")
+player2 = input("What is player 2 name?")
+#name: player_turn
+#purpose: takes in a player name and draws/removes a card from the deck, prints "user drew card x", and returns the value
+#input: player_name as string, deck as list
+#returns: integer
+
+def player_turn(player):
+  playerhand = random.randint(0,len(deck)-1)
+  playerCard = deck[playerhand]
+  print(player + " drew card:"+ str(playerCard))
+  deck.remove(deck[playerhand])
+  return deck[playerhand]
+  
+
+def compare_scores(score1, score2):
+  if score1 > score2:
+    global player1Score
+    player1Score += 2
+  elif score2 > score1:
+    global player2Score
+    player2Score += 2
+  
+  elif score1 == score2:
+    player1Card = player_turn(player1)
+    player2Card = player_turn(player2)
+    if score1 > score2:
+      player1Score = player1Score + 4
+    else:
+      player2Score = player2Score + 4
+
+
+def score():
+  print(player1 + ":" +str(player1Score))
+  print(player2 + ":" +str(player2Score))
+  
+def check_winner(player1Score, player2Score):
+  if player1Score > player2Score:
+    winner = player1
+  elif player2Score > player1Score:
+    winner = player2
+  elif player1Score == player2Score:
+    deck = shuffled_deck()
+    player1Card = player_turn(player1)
+    player2Card = player_turn(player2)
+    if player1Card > player2Card:
+      winner = player1
+    elif player2Card > player1Card:
+      winner = player2
+    elif player1Card == player2Card:
+      check_winner(player1Score, player2Score)
+
+while len(deck) != 0:
+  player1Card = int(player_turn(player1))
+  player2Card = int(player_turn(player2))
+  compare_scores(player1Card, player2Card)
+  score()
+else:
+  print('win')
+  
+winner = "" 
+print("Winner is:"+ winner)
