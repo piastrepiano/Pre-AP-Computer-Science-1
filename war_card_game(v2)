@@ -1,72 +1,53 @@
 import random
-
-
 def shuffled_deck():
     basic_deck = list(range(2, 15)) * 4
     random.shuffle(basic_deck)
     return basic_deck
-deck = shuffled_deck()
-player1Score = 0
-player2Score = 0
-player1 = input("What is player 1 name?")
-player2 = input("What is player 2 name?")
-#name: player_turn
-#purpose: takes in a player name and draws/removes a card from the deck, prints "user drew card x", and returns the value
-#input: player_name as string, deck as list
-#returns: integer
-
-def player_turn(player):
-  playerhand = random.randint(0,len(deck)-1)
-  playerCard = deck[playerhand]
-  print(player + " drew card:"+ str(playerCard))
-  deck.remove(deck[playerhand])
-  return deck[playerhand]
+basic_deck = shuffled_deck()
+cards_in_play = 2
+print("Welcome to War!")
+namep1 = input("Player 1's name?")
+namep2 = input("Player 2's name?")
+card_number = 52
+score1 = 0 
+score2 = 0
+while card_number > 0:
+  card1 = basic_deck.pop()
+  print(card1)
+  card2 = basic_deck.pop()
+  print(card2)
+  if card1 > card2:
+    cards_in_play = 2
+    print(namep1 + " wins!")
+    score1+=cards_in_play
+    card_number -= cards_in_play
+  elif card2 > card1:
+    print(namep2 + " wins!")
+    cards_in_play = 2
+    score2+=cards_in_play
+    card_number-=cards_in_play
+  else:
+    while card1 == card2:
+      if card_number == 0:
+        print("There are no more cards.")
+      else:
+        cards_in_play+=2
+        print("I...")
+        print("Declare...")
+        card1 = basic_deck.pop()
+        card2 = basic_deck.pop()
+        print("War!")
+        print(card1)
+        print(card2)
+      if card1 > card2:
+        print(namep1 + " wins!")
+        score1+=cards_in_play
+        card_number-=cards_in_play
+      elif card2 > card1:
+        print(namep2 + " wins!")
+      score2+=cards_in_play
+      card_number-=cards_in_play
+  (print(namep1 +": ", score1))
+  (print(namep2 +": ", score2))
   
-
-def compare_scores(score1, score2):
-  if score1 > score2:
-    global player1Score
-    player1Score += 2
-  elif score2 > score1:
-    global player2Score
-    player2Score += 2
   
-  elif score1 == score2:
-    player1Card = player_turn(player1)
-    player2Card = player_turn(player2)
-    if score1 > score2:
-      player1Score = player1Score + 4
-    else:
-      player2Score = player2Score + 4
-
-
-def score():
-  print(player1 + ":" +str(player1Score))
-  print(player2 + ":" +str(player2Score))
-  
-def check_winner(player1Score, player2Score):
-  if player1Score > player2Score:
-    winner = player1
-  elif player2Score > player1Score:
-    winner = player2
-  elif player1Score == player2Score:
-    deck = shuffled_deck()
-    player1Card = player_turn(player1)
-    player2Card = player_turn(player2)
-    if player1Card > player2Card:
-      winner = player1
-    elif player2Card > player1Card:
-      winner = player2
-    elif player1Card == player2Card:
-      check_winner(player1Score, player2Score)
-
-while len(deck) != 0:
-  player1Card = int(player_turn(player1))
-  player2Card = int(player_turn(player2))
-  compare_scores(player1Card, player2Card)
-  score()
-else:
-  print('win')
-  
-winner = "" 
-print("Winner is:"+ winner)
