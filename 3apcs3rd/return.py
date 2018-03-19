@@ -5,13 +5,12 @@ import random
 
 
 def mystery_function(x, y):
-    random_number = random.randint(0, 1)
+    random_number = random.randint(0,1)
     if random_number > 0:
         z = x + y
     else:
         z = x * y
-    print(z)
-    return ''
+    return z
 
 
-mystery_function(1, 2)
+print(mystery_function(1, 2))
