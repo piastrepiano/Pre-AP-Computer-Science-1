@@ -4,7 +4,11 @@
                                 500lbs food (The player eats 5lbs of food a day.)
                                 5 health (The player's health randomly decreases 2 times during the month.)
             must get to Oregon by 12/31
-    Create a function select_action which uses a while loop to call add_day function
+        # The player's health randomly decreases 2 times during the month.
+        percent = random.randint(1, 100)
+        # 2 days in a month around 6%
+        if percent <= 6:
+            health -= 2
     Game ends if food runs out, days run out, or health runs out
 """
 import random
@@ -20,7 +24,8 @@ current_month = 3
 current_day = 1
 days_used = 0
 # Use global list to keep track of which months have 31 days and use this in the add_day function
-months_with_31_days = [1, 3, 5, 7, 8, 10, 12]
+# [1, 3, 5, 7, 8, 10, 12]
+days_in_months = [31, 30, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 
 # beginning: user is asked their name.
@@ -36,10 +41,13 @@ def get_name():
 
 
 # Each turn, the player asked what action choose: travel, rest, hunt, status, help, quit
+# Create a function select_action which uses a while loop to call add_day function
 def select_action():
     # Game ends if food runs out, days run out, or health runs out
-    while food > 0 or (current_month != 12 and current_day !=31) or health > 0:
+    while food > 0 or (current_month != 12 and current_day != 31) or health > 0:
+        global days_used
         select = input("What do you want to do?")
+        days_used = 0
         if select == "travel":
             travel()
         elif select == "rest":
@@ -55,6 +63,7 @@ def select_action():
         else:
             print("That is not an option...")
             select_action()
+        add_day(days_used)
 
 
 # help: lists all the commands.
@@ -102,12 +111,28 @@ def hunt():
 
 
 # Create a function add_day which updates the day
-# The player eats 5lbs of food a day
-# The player's health randomly decreases 2 times during the month.
-def add_day():
+# player eats each day
+def add_day(days):
+    global current_day
+    global current_month
     global food
     global health
-
+    # updates the day
+    check_day = current_day + days
+    if days_in_months[current_month - 1] == 31 and check_day > 31:
+        days = check_day - 31
+        current_day = 0
+        current_day += days
+        current_month += 1
+    elif days_in_months[current_month - 1] == 30 and check_day > 30:
+        days = check_day - 30
+        current_day = 0
+        current_day += days
+        current_month += 1
+    else:
+        current_day += days
+    # The player eats 5lbs of food a day
+    food -= days * 51
 
 
 def main():
