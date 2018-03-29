@@ -1,15 +1,9 @@
 """
-    Player starts in NYC on 03/01 with
-                                2,000 miles
-                                500lbs food (The player eats 5lbs of food a day.)
-                                5 health (The player's health randomly decreases 2 times during the month.)
-            must get to Oregon by 12/31
         # The player's health randomly decreases 2 times during the month.
         percent = random.randint(1, 100)
         # 2 days in a month around 6%
         if percent <= 6:
             health -= 2
-    Game ends if food runs out, days run out, or health runs out
 """
 import random
 
@@ -43,27 +37,38 @@ def get_name():
 # Each turn, the player asked what action choose: travel, rest, hunt, status, help, quit
 # Create a function select_action which uses a while loop to call add_day function
 def select_action():
-    # Game ends if food runs out, days run out, or health runs out
-    while food > 0 or (current_month != 12 and current_day != 31) or health > 0:
-        global days_used
-        select = input("What do you want to do?")
-        days_used = 0
-        if select == "travel":
-            travel()
-        elif select == "rest":
-            rest()
-        elif select == "hunt":
-            hunt()
-        elif select == "status":
-            status()
-        elif select == "help":
-            help_command()
-        elif select == "quit":
-            quit()
+    if distance == 0:
+        print("Congratulations!\nYou reached your destination, Oregon!")
+    else:
+        # Game ends if food runs out, days run out, or health runs out
+        while food > 0 or (current_month < 12 and current_day < 31) or health > 0:
+            global days_used
+            select = input("What do you want to do?")
+            days_used = 0
+            if select == "travel":
+                travel()
+            elif select == "rest":
+                rest()
+            elif select == "hunt":
+                hunt()
+            elif select == "status":
+                status()
+            elif select == "help":
+                help_command()
+            elif select == "quit":
+                quit()
+            else:
+                print("That is not an option...")
+                select_action()
+            add_day(days_used)
         else:
-            print("That is not an option...")
-            select_action()
-        add_day(days_used)
+            print("GAME OVER!!!")
+            if food < 0:
+                print("You ran out of food.")
+            elif current_month >= 12 and current_day >= 31:
+                print("You failed to reach your destination by December 31.")
+            elif health == 0:
+                print("Your health reached to 0.")
 
 
 # help: lists all the commands.
@@ -75,7 +80,7 @@ def help_command():
 def status():
     print("-" * 10, "STATUS:", "-" * 10)
     print("Day:", current_month, "/", current_day)
-    print("Food:", food, "lbs\nHealth:", health, "\nDistance Traveled:", distance, "miles\n" + "-" * 29)
+    print("Food:", food, "lbs\nHealth:", health, "\nDistance:", distance, "miles\n" + "-" * 29)
 
 
 # travel: moves you randomly between 30-60 miles and takes 3-7 days (random).
