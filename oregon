@@ -35,41 +35,38 @@ def get_name():
 # Each turn, the player asked what action choose: travel, rest, hunt, status, help, quit
 # Create a function select_action which uses a while loop to call add_day function
 def select_action(user_name):
-    if distance == 0:
-        print("Congratulations!\nYou reached your destination, Oregon!")
+# Game ends if food runs out, days run out, or health runs out
+    while food > 0 ^ current_month < 13 and current_day != 31 ^ health > 0:
+       global days_used
+       select = input("What do you want to do, " + user_name + "?")
+       days_used = 0
+       if select == "help":
+           help_command()
+       elif select == "status":
+           status()
+       elif select == "travel":
+           travel()
+       elif select == "rest":
+           rest()
+       elif select == "hunt":
+           hunt()
+       elif select == "quit":
+           quit()
+       else:
+           print("That is not an option...")
+           select_action(user_name)
+       add_day(days_used)
+       if distance <= 0:
+           print("Congratulations!\nYou reached your destination, Oregon!")
+           quit()
     else:
-        # Game ends if food runs out, days run out, or health runs out
-        while food > 0 ^ current_month < 13 and current_day != 31 ^ health > 0:
-            global days_used
-            select = input("What do you want to do, " + user_name + "?")
-            days_used = 0
-            if select == "help":
-                help_command()
-            elif select == "status":
-                status()
-            elif select == "travel":
-                travel()
-            elif select == "rest":
-                rest()
-            elif select == "hunt":
-                hunt()
-            elif select == "quit":
-                quit()
-            else:
-                print("That is not an option...")
-                select_action(user_name)
-            add_day(days_used)
-            if distance <= 0:
-                print("Congratulations!\nYou reached your destination, Oregon!")
-                quit()
-        else:
-            print("GAME OVER!!!")
-            if food <= 0:
-                print("You ran out of food.")
-            elif current_month >= 12:
-                print("You failed to reach your destination by December 31.")
-            elif health <= 0:
-                print("Your health reached to 0.")
+       print("GAME OVER!!!")
+       if food <= 0:
+           print("You ran out of food.")
+       elif current_month >= 12:
+           print("You failed to reach your destination by December 31.")
+       elif health <= 0:
+           print("Your health reached to 0.")
 
 
 # help: lists all the commands.
