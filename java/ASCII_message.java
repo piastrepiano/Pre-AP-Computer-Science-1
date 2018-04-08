@@ -1,0 +1,54 @@
+public class ASCII_message {
+    public static void main(String args[]) {
+        int letterH= 72;
+        System.out.print((char)letterH);
+        int lettere= 101;
+        System.out.print((char)lettere);
+        int letterl= 108;
+        System.out.print((char)letterl);
+        int letterl2= 108;
+        System.out.print((char)letterl2);
+        int lettero= 111;
+        System.out.print((char)lettero);
+        int letterExclaim= 33;
+        System.out.print((char)letterExclaim);
+        int letterSpace= 32;
+        System.out.print((char)letterSpace);
+        int letterH2= 72;
+        System.out.print((char)letterH2);
+        int lettero2= 111;
+        System.out.print((char)lettero2);
+        int letterw= 119;
+        System.out.print((char)letterw);
+        int letterSpace2= 32;
+        System.out.print((char)letterSpace2);
+        int lettera= 97;
+        System.out.print((char)lettera);
+        int letterr= 114;
+        System.out.print((char)letterr);
+        int lettere2= 101;
+        System.out.print((char)lettere2);
+        int letterSpace3= 32;
+        System.out.print((char)letterSpace3);
+        int lettery= 121;
+        System.out.print((char)lettery);
+        int lettero3= 111;
+        System.out.print((char)lettero3);
+        int letteru= 117;
+        System.out.print((char)letteru);
+        int letterSpace4= 32;
+        System.out.print((char)letterSpace4);
+        int lettert= 116;
+        System.out.print((char)lettert);
+        int lettero4= 111;
+        System.out.print((char)lettero4);
+        int letterd= 100;
+        System.out.print((char)letterd);
+        int lettera2= 97;
+        System.out.print((char)lettera2);
+        int lettery2= 121;
+        System.out.print((char)lettery2);
+        int letterQuestion= 63;
+        System.out.print((char)letterQuestion);
+    }
+}

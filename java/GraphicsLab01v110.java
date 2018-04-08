@@ -8,10 +8,8 @@
 import java.awt.*;
 import java.applet.*;
 
-public class GraphicsLab01v110 extends Applet
-{
-    public void paint (Graphics g)
-    {
+public class GraphicsLab01v110 extends Applet {
+    public void paint (Graphics g){
         //Draw Cube
         g.setColor(Color.orange);
         g.drawRect(0,0,200,200);
