@@ -12,78 +12,78 @@ public class GraphicsLab02v110 extends Applet{
         int x1 = 10;
         int y1 = 10;
         int x2 = 10;
-        for(int k =1; k < 65; k ++) {
+        for(int k =1; k < 44; k ++) {
             g.drawLine(x1, y1, x2, height + 10);
-            y1 += 10;
-            x2 += 15;
+            y1 += 15;
+            x2 += 20;
         }
         // bottom right corner
         y1 = 10;
         x2 = 990;
-        for(int k = 1; k < 65; k ++){
+        for(int k = 1; k < 44; k ++){
             g.drawLine(width + 10, y1, x2, height + 10);
-            y1 += 10;
-            x2 -= 15;
+            y1 += 15;
+            x2 -= 20;
         }
         // top right corner
         x1 = 10;
         y1 = 640;
         x2 = 10;
         int y2 = 10;
-        for(int k =1; k < 65; k ++){
+        for(int k =1; k < 44; k ++){
             g.drawLine(x1, y1, x2, y2);
-            y1 -= 10;
-            x2 += 15;
+            y1 -= 15;
+            x2 += 20;
         }
         //top left corner
         y1 = 640;
         x2 = 990;
         y2 = 10;
-        for(int k =1; k < 65; k ++){
+        for(int k =1; k < 44; k ++){
             g.drawLine(width + 10, y1, x2, y2);
-            y1 -= 10;
-            x2 -= 15;
+            y1 -= 15;
+            x2 -= 20;
         }
 
         //interior rectangle
-        width = 600;
-        height = 250;
-        g.drawRect(200, 200, width, height);
+        width = 620;
+        height = 270;
+        g.drawRect(190, 190, width, height);
         // bottom left corner
-        x1 = 200;
-        y1 = 200;
-        x2 = 200;
-        for(int k =1; k < 43; k ++) {
-            g.drawLine(x1, y1, x2, height + 200);
-            y1 += 6;
-            x2 += 14;
+        x1 = 190;
+        y1 = 190;
+        x2 = 190;
+        for(int k =1; k < 26; k ++) {
+            g.drawLine(x1, y1, x2, height + 190);
+            y1 += 11;
+            x2 += 19;
         }
         // bottom right corner
-        y1 = 200;
-        x2 = 800;
-        for(int k = 1; k < 43; k ++){
-            g.drawLine(width + 200, y1, x2, height + 200);
-            y1 += 6;
-            x2 -= 14;
+        y1 = 190;
+        x2 = 810;
+        for(int k = 1; k < 26; k ++){
+            g.drawLine(width + 190, y1, x2, height + 190);
+            y1 += 11;
+            x2 -= 19;
         }
         //top right corner
-        y1 = 450;
-        x2 = 800;
-        y2 = 200;
-        for(int k =1; k < 43; k ++) {
-            g.drawLine(width + 200, y1, x2, y2);
-            y1 -= 6;
-            x2 -= 14;
+        y1 = 460;
+        x2 = 810;
+        y2 = 190;
+        for(int k =1; k < 26; k ++) {
+            g.drawLine(width + 190, y1, x2, y2);
+            y1 -= 11;
+            x2 -= 19;
         }
         // top left corner
-        x1 = 200;
-        y1 = 450;
-        x2 = 200;
-        y2 = 200;
-        for(int k =1; k < 43; k ++) {
+        x1 = 190;
+        y1 = 460;
+        x2 = 190;
+        y2 = 190;
+        for(int k =1; k < 26; k ++) {
             g.drawLine(x1, y1, x2, y2);
-            y1 -= 6;
-            x2 += 14;
+            y1 -= 11;
+            x2 += 19;
         }
     }
 }
