@@ -1,0 +1,50 @@
+<!--Create a function that will collect numbers from the user and then calculate them. Ask the user what they would like to do. (Add, Subtract, Multiply, Divide, Integer Remainder Division, etc.) Be sure to use document.write() to print the numbers, sign, and result. -->
+
+<html>
+<head>
+<title>
+Fun with Functions
+</title>
+<script type="text/javascript">
+var num1 = 0;
+var num2 = 0;
+var usrResp= "add";
+	function mathCalc()
+	{
+	num1=prompt("Please pick a number to start.", 0)
+	num2=prompt("Now pick another number.",0)
+	usrResp=prompt("Chose a math function: add, subtract, multiply, divide, or remainder division.")
+	if (usrResp == "add")
+	{
+		return (num1) + "+" + (num2) + "=" + (parseInt(num1) + parseInt(num2));
+	}
+	else if(usrResp=="subtract")
+	{
+		return (num1) + "-" + (num2) + "=" + (parseInt(num1) - parseInt(num2));
+	}
+	else if (usrResp=="multiply")
+	{
+		return (num1) + "*" + (num2) + "=" + (parseInt(num1) * parseInt(num2));
+	}
+	else if (usrResp=="divide")
+	{
+		return (num1) + "/" + (num2) + "=" + (parseInt(num1) / parseInt(num2));
+	}
+	else if (usrResp=="remainder division")
+	{
+		return (num1) + "%" + (num2) + "=" + (parseInt(num1) % parseInt(num2));
+	}
+	else
+	{
+		return "Not a valid selection."
+	}
+	}
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+ document.write(mathCalc())
+</script>
+</body>
+</html>
