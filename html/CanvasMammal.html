@@ -1,0 +1,80 @@
+<html>
+<head>
+<script type="text/javascript">
+	function drawBody()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx = myCanvas.getContext("2d");
+
+		ctx.fillRect (150,100,150,65);
+	}
+	function drawLegs1()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx2 = myCanvas.getContext("2d");
+
+		ctx2.fillRect (150,165,5,25);
+		ctx2.fillRect (160,165,5,25);
+	}
+	function drawLegs2()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx3 = myCanvas.getContext("2d");
+
+		ctx3.fillRect (285,165,5,25);
+		ctx3.fillRect (295,165,5,25);
+	}
+	function drawFace()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx4 = myCanvas.getContext("2d");
+
+		ctx4.fillRect (300,50,75,75);
+		ctx4.clearRect(315,65,10,10);
+		ctx4.clearRect(350,65,10,10);
+	}
+	function drawEars()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx5 = myCanvas.getContext("2d");	
+
+		ctx5.fillRect(305,35,10,15);
+		ctx5.strokeRect(300,30,20,20);
+		
+		ctx5.fillRect(359,35,10,15);
+		ctx5.strokeRect(354,30,20,20);
+		
+	}
+	function drawMouth()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx6 = myCanvas.getContext("2d");
+
+		ctx6.clearRect(315,97,8,8);
+		ctx6.clearRect(334,97,6,8);
+		ctx6.clearRect(352,97,8,8);
+		ctx6.clearRect(332,89,10,8);
+		ctx6.clearRect(315,105,45,6);
+	}
+	function drawTail()
+	{
+		var myCanvas = document.getElementById("myCanvas");
+		var ctx7 = myCanvas.getContext("2d");
+
+		ctx7.fillRect(120,110,35,8);
+		ctx7.fillRect(120,97,6,13);
+	}	
+</script>
+<title>
+Canvas Mammal
+</title>
+</head>
+
+<body onload="drawBody(); drawLegs1(); drawLegs2(); drawFace(); drawEars(); drawMouth(); drawTail();">
+
+<canvas id="myCanvas" width="400" height="200">
+</canvas>
+
+
+</body>
+</html>
