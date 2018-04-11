@@ -1,0 +1,67 @@
+<!-- Practice using Event Handlers in Javascript. Use at least 3 different events.-->
+
+<html>
+<head>
+<title>
+Event Handlers
+</title>
+</head>
+
+<!-- onLoad and unonLoad-->
+<body onload="promptName()" >
+
+<script type="text/javascript">
+function promptName()
+{
+var userName = prompt("What's your name ?", "")
+return userName;
+}
+function thankYou()
+{
+alert("Thank you, " + promptName() + "!");
+}
+
+window.onunload = thankYou();
+</script>
+
+<!-- onClick -->
+
+<script>
+function ss()
+{
+alert("Hello!")
+}
+</script>
+<form>
+<input type="button" value="Click here" onclick="ss()">
+</form>
+
+<button onclick="this.innerHTML=Date()">What time is it?</button>
+
+<!--onMouseover and onMouseout-->
+
+	<!--IMG-->
+<br><br>
+
+<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="smiley.gif" alt="Smiley" width="32" height="32">
+
+<script>
+function bigImg(x) {
+    x.style.height = "64px";
+    x.style.width = "64px";
+}
+
+function normalImg(x) {
+    x.style.height = "32px";
+    x.style.width = "32px";
+}
+</script>
+
+	<!--words-->
+<br>
+<a href="#" onMouseOver="document.write('Hi, nice to see you!">Over Here!</a>
+<br>
+<a href="#" onMouseOut="alert('Good try!')">Get Out Here!</a>
+
+</body>
+</html>
