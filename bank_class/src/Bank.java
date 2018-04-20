@@ -13,10 +13,8 @@ public class Bank {
 
     // Overloaded Constructor
 
-
     // Methods
     // Set Method
-
     // getCheck
     public double getChecking(){
         return checking;
@@ -28,7 +26,9 @@ public class Bank {
     }
 
     // get combined
-
+    public double getCombined(double checking, double savings){
+        return checking + savings;
+    }
 
     // checking deposit
     public void checkingDeposit(double amount){
@@ -53,7 +53,6 @@ public class Bank {
     // close checking
 
     // close savings
-
 
 
 }
