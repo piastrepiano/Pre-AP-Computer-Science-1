@@ -10,7 +10,7 @@ PURPOSE: The purpose of this program is to demonstrate knowledge of using constr
 
 import java.awt.*;
 import java.applet.*;
-import java.util.*;
+//import java.util.*;
 
 public class GraphicsLab03v110 extends Applet
 {
@@ -21,13 +21,10 @@ public class GraphicsLab03v110 extends Applet
         g.drawLine(400,10,400,590);
         g.drawLine(10,300,790,300);
 
-        //Random rndInt = new Random(1234);
-
         // Draw Random Lines
         // The cell with lines displays 100 random lines.
         //Both ends of the line have random x and y coordinate locations.
         //The lines are also drawn in random colors.
-        Random rndInt = new Random(12345);
         for (int k = 1; k <= 100; k++) {
             int x1 = ((int)(Math.random() * 390 + 11));
             int x2 = ((int)(Math.random() * 280 + 11));
@@ -62,7 +59,7 @@ public class GraphicsLab03v110 extends Applet
         //The circles are also drawn in random colors.
         for (int k =1; k <= 100; k++){
             int x1 = ((int)(Math.random() * 200 + 11));
-            int y1 = ((int)(Math.random() * 100 + 300));
+            int y1 = ((int)(Math.random() * 98 + 300));
             int width = ((int)(Math.random() * 201 + 1));
             int height = ((int)(Math.random() * 201 + 1));
             int red = ((int)(Math.random() * 256));
