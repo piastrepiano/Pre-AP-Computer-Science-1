@@ -1,0 +1,53 @@
+import java.util.Scanner;
+import java.util.Random;
+import java.lang.System;
+
+public class Guessing_game {
+    public static void main (String args[]){
+        System.out.println("Hello and welcome to my number guessing game.");
+        System.out.println("Pick a number: ");
+
+        //Integer object
+
+        //max number
+        Scanner inputnum = new Scanner(System.in);
+        int maxnum;
+        maxnum = inputnum.nextInt();
+
+        Random rand = new Random();
+        int number = rand.nextInt(maxnum);
+        int tries = 0;
+        //Scanner object
+        Scanner input = new Scanner(System.in);
+        int guess;
+        boolean win = false;
+
+        //Be sure to include a loop to to allow your user to continue playing until they win.
+        while (!win){
+
+            System.out.println("Guess a number between 1 and "+ maxnum +": ");
+            guess = input.nextInt();
+            //Keep track of the number of attempts
+            tries++;
+
+            if (guess == number){
+                win = true;
+            }
+
+            else if(guess > number){
+                System.out.println("Number is to high, try again");
+            }
+
+            else {
+                System.out.println("Number is to low, try again");
+            }
+        }
+
+        //Double object
+        double score = 100/tries;
+        System.out.println("You win!");
+        System.out.println("It took you "+ tries + " tries.");
+        System.out.println("Your score is " + score + "%");
+
+    }
+}
