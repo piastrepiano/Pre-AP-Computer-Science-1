@@ -1,0 +1,33 @@
+/*
+    Using a Graphics Applet, create an object and its methods to draw a vehicle of your choice.
+    It may be terrestrial, aerial, nautical, extraterrestrial, etc.
+    Be sure to use the One Task, One Module rule.
+ */
+
+import java.awt.*;
+import java.applet.*;
+
+public class vehicle_class_identifier extends Applet{
+    public void paint(Graphics g){
+        Vehicle.drawWheels(g);
+        Vehicle.drawBody(g);
+        Vehicle.drawHead(g);
+    }
+}
+
+class Vehicle{
+    public static void drawWheels(Graphics g){
+        g.drawOval(400, 400, 100,100);
+        g.drawOval(700, 400, 100, 100);
+    }
+
+    public static void drawBody(Graphics g){
+        g.drawRect(350, 200, 500, 200);
+    }
+
+    public static void drawHead(Graphics g){
+        g.drawRoundRect(800, 175, 100, 230, 25, 50);
+        g.drawRoundRect(880, 250, 75, 155, 40, 50);
+        g.drawRoundRect(950, 290, 50, 115, 25, 50);
+    }
+}
