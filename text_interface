@@ -6,21 +6,24 @@
  */
 
 import java.util.Scanner;
-import java.text.*;
 
 public class text_interface {
-    
+
     public static void main(String args[]) {
         Scanner reply = new Scanner(System.in);
         System.out.println("Hello User.\nDo you want to create an account or log in?");
         String usr_reply = reply.nextLine();
 
+        //allow the creation of an account
         if (usr_reply.equals("Create an account")) {
             text_based_interface.account();
         }
+        //log in to the bank account
         else if (usr_reply.equals("log in")){
             text_based_interface.log_in();
         }
+        
+        text_based_interface.withdraw_deposit_payroll();
     }
 }
 
@@ -32,7 +35,9 @@ class text_based_interface{
     private static String password;
     private static String passwrd;
     private static String choice_reply;
-    
+    static boolean play = true;
+
+    //allow the creation of an account
     public static void account(){
         Scanner first_last_name = new Scanner(System.in);
         System.out.print("\nName(first and last): ");
@@ -44,7 +49,8 @@ class text_based_interface{
         System.out.print("\nPassword: ");
         password = passwrd.nextLine();
     }
-    
+
+    //log in to the bank account
     public static void log_in(){
         System.out.println("LOG IN: ");
         Scanner log_in_info = new Scanner(System.in);
@@ -52,11 +58,22 @@ class text_based_interface{
         user_name = log_in_info.nextLine();
         System.out.print("\nPassword: ");
         passwrd = log_in_info.nextLine();
-        
+
+        //deposit, withdraw, Additionally, allow the user to input payment information & print out their check
         if(usr_name.equals(user_name) & password.equals(passwrd)){
             System.out.println("Hello " + name);
+        }
+        else{
+            System.out.println("Invalid username or password. Try again.");
+            text_based_interface.log_in();
+        }
+    }
+
+    //Allow them an option to continue making transaction or logging out.
+    public static void withdraw_deposit_payroll(){
+        while(play){
             Scanner deposit_or_withdraw = new Scanner(System.in);
-            System.out.println("Do you want to deposit, withdraw, or print out a check.");
+            System.out.println("Do you want to deposit, withdraw, print out a check, or log out.");
             choice_reply = deposit_or_withdraw.nextLine();
             if(choice_reply.equals("deposit")){
                 //deposit info
@@ -65,12 +82,17 @@ class text_based_interface{
                 //withdraw info
             }
             else if(choice_reply.equals("print out a check")){
-                
+                //payroll
+            }
+            else if(choice_reply.equals("log out")) {
+                play = false;
             }
         }
-        else{
-            System.out.println("Invalid username or password. Try again.");
-            text_based_interface.log_in();
-        }
     }
+    
+    //input payment information and print out check
+    
+    //deposit method
+    
+    //withdraw method
 }
