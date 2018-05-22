@@ -33,5 +33,22 @@ class draw{
         g.fillArc(875, 185, 75, 75, 0, 360);
         g.fillArc(910, 160, 75, 75, 0, 360);
         g.fillArc(850, 160, 75, 75, 0, 360);
+        
+        /*
+        // a darker shade of blue bottom part (21, 21, 94)
+        
+            tree color(98, 78, 44)
+            darker tree color(83, 49, 24)
+            
+            Random rndInt = new Random(12345);
+        for (int k = 1; k <= 10; k++) {
+            x1 = ((int)(Math.random() * 15 + 1000));
+            int w = ((int)(Math.random() * 30 + 50));
+            g.fillRect(x1, 255, w, 385);
+        for (int k = 1; k <= 10; k++) {
+            x1 = ((int)(Math.random() * 15 + 1000));
+            int w = ((int)(Math.random() * 30 + 50));
+            g.fillRect(x1, 270, w, 385);
+        */
     }
 }
