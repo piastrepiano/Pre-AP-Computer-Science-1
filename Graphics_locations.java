@@ -64,6 +64,9 @@ class draw{
     }
 
     public static void bottom_decor(Graphics g){
+        Color stairs = new Color(157, 95, 2);
+        g.setColor(stairs);
+        
         int x1 = 330;
         int y1 = 455;
         int w = 30;
@@ -74,6 +77,20 @@ class draw{
             w += 10;
         }
 
+        Color dark_brown = new Color(81, 49, 1);
+        g.setColor(dark_brown);
+        
+        /*
+        x1 = 330;
+        y1 = 455;
+        w = 30;
+        int h = 30
+        for (int k = 1; k <= 5; k++){
+        g.fillRect(x1, y1, w, h);
+        x1 -= 5;
+        y1 += 30;
+        h += 30;
+        */
         x1 = 330;
         y1 = 455;
         int y2 = y1 + 30;
