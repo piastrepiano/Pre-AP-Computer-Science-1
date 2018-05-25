@@ -64,12 +64,25 @@ class draw{
     }
 
     public static void bottom_decor(Graphics g){
-        Color stairs = new Color(157, 95, 2);
-        g.setColor(stairs);
-        
+        Color dark_brown = new Color(81, 49, 1);
+        g.setColor(dark_brown);
+
         int x1 = 330;
         int y1 = 455;
         int w = 30;
+        int h = 30;
+        for (int k = 1; k <= 5; k++) {
+            g.fillRect(x1, y1, w, h);
+            x1 -= 5;
+            y1 += 30;
+            w += 10;
+        }
+
+        Color stairs = new Color(157, 95, 2);
+        g.setColor(stairs);
+        x1 = 330;
+        y1 = 455;
+        w = 30;
         for (int k = 1; k <= 5; k++) {
             g.fillRect(x1, y1, w, 10);
             x1 -= 5;
@@ -77,41 +90,13 @@ class draw{
             w += 10;
         }
 
-        Color dark_brown = new Color(81, 49, 1);
-        g.setColor(dark_brown);
-        
-        /*
-        x1 = 330;
-        y1 = 455;
-        w = 30;
-        int h = 30
-        for (int k = 1; k <= 5; k++){
-        g.fillRect(x1, y1, w, h);
-        x1 -= 5;
-        y1 += 30;
-        h += 30;
-        */
-        x1 = 330;
-        y1 = 455;
-        int y2 = y1 + 30;
-        for (int k = 1; k <= 5; k++) {
-            g.drawLine(x1, y1, x1, y2);
-            x1 -= 5;
-            y1 += 30;
-            y2 += 30;
-        }
-
-        x1 = 360;
-        y1 = 455;
-        y2 = y1 + 30;
-        for (int k = 1; k <= 5; k++){
-            g.drawLine(x1,  y1, x1, y2);
-            x1 += 5;
-            y1 += 30;
-            y2 += 30;
-        }
-
-
+        g.setColor(Color.black);
+        g.drawRect(499, 304, 101, 151);
+        Color door = new Color(165,42,42);
+        g.setColor(door);
+        g.fillRect(500, 305, 100, 150);
+        g.setColor(Color.black);
+        g.fillArc(580, 375, 10, 10, 0, 360);
     }
 }
 //draw string 2 ints and a string x, y, literal string*/
