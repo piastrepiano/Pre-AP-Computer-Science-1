@@ -11,33 +11,49 @@ public class Game_text {
 
     public static void main(String args[]){
         text_play.intro();
+
+        //stage 1
+        //Enemies-bats, thorns, and pits
         while(beginning_maze.getCounter() < 3) {
             beginning_maze.directions();
             if(beginning_maze.trap_or_safe()) {
                 beginning_maze.addCounter();
             } else {
+                //restarts maze
                 beginning_maze.recount();
             }
         }
-        /*
-//plan out maze//
-//harm health -
-          Enemies ( nine tail fox, phoenix, dragon slayer) //
-//end of maze find a yellow and red key
-        Yellow key teleports you to China and becomes your partner...a serpent
-        Red key teleports you to the amazon river and becomes your partner...a gorilla//
-//plan out 2 new mazes//
-//go through maze and find the door(portal)
-                If you are in  china you teleport to amazon river or vice versa
-                Partner dies from new environment
-Finish stage//
-//portal to space//
-//white dragon appears//
-//you must fight//
-//win collect the eliteless flag//
-//white light appears, you appear in front of the abandoned house but this time it’s white instead of wood color//
+        //end of maze find a yellow and red key
 
+        /* STAGE 2
+            Maze China
+                Yellow key teleports you to China and becomes your partner...a serpent
+                    Enemies(dragon slayer, (2 others for serpent)
+            Maze Amazon River
+                Red key teleports you to the amazon river and becomes your partner...a gorilla
+                    Enemies(dragon slayer, (2 others for gorilla)
+
+            find the door(portal)
+        */
+
+        /*STAGE 3
+            Maze China teleports to Maze Amazon River
+            Maze Amazon River teleports to Maze China
+
+                Partner dies from new environment
+                Survive then spaceship to final stage
          */
+
+        /*STAGE 4 - FINAL STAGE
+            @ space
+            white dragon appears
+            fight
+            win collect the Eliteless Flag
+            White light image
+            Appear in front of the abandoned house but this time it's white
+         */
+
+        //SUGGESTION ENEMIES ( nine tail fox, phoenix, dragon slayer)
     }
 }
 
