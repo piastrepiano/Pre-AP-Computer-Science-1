@@ -37,9 +37,10 @@ public class Beginning_maze{
         Random number = new Random();
         Integer num = number.nextInt(100) + 1;
 
+        //30 % pit(start over)
         if (num <= 30) {
-            //30 % pit(start over)
-            System.out.println("Hkhbj");
+            System.out.println("Oh no! You fell in a pit back to where you started!");
+            //start over
             return false;
         }
         else if (num <= 60) {
@@ -47,18 +48,20 @@ public class Beginning_maze{
             Random choice = new Random();
             Integer bot = choice.nextInt(2) + 1;
 
+            //15% bats(harm health(-1))
             if(bot.equals(1)) {
-                System.out.println("bat");
-                //15% bats(harm health(-1))
-            } else {
-                System.out.println("thorn");
-                //15% thorns(harm health (-.5))
+                System.out.println("A bat attacks you...\nHealth decreases by 1");
             }
+            //15% thorns(harm health (-.5))
+            else {
+                System.out.println("You got pricked by a thorn bush next to you...\nHealth decreases by 0.5");
+            }
+            //counter +1
             return true;
         }
         else {
             //40% safe continue
-            System.out.println("safe");
+            //counter +1
             return true;
         }
     }
@@ -70,11 +73,14 @@ public class Beginning_maze{
 
         if (direction.equals("left")) {
             System.out.print("You turned left...");
-        } else if (direction.equals("right")) {
+        }
+        else if (direction.equals("right")) {
             System.out.print("You turned right...");
-        } else if (direction.equals("straight")) {
+        }
+        else if (direction.equals("straight")) {
             System.out.print("You continued walking straight...");
-        } else {
+        }
+        else {
             System.out.println("That is not a direction. Try again...");
             directions();
         }
