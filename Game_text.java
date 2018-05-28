@@ -5,13 +5,20 @@ and must include graphics drawn on an Applet showing the user locations, enemies
 You must write the code to draw the images on the Applet for each object.
  */
 import java.util.Scanner;
-import java.util.Random;
 
 public class Game_text {
+    static Beginning_maze beginning_maze = new Beginning_maze();
+
     public static void main(String args[]){
         text_play.intro();
-        text_play.directions();
-       // text_play.trap_or_safe();
+        while(beginning_maze.getCounter() < 3) {
+            beginning_maze.directions();
+            if(beginning_maze.trap_or_safe()) {
+                beginning_maze.addCounter();
+            } else {
+                beginning_maze.recount();
+            }
+        }
         /*
 //plan out maze//
 //harm health -
@@ -35,8 +42,6 @@ Finish stage//
 }
 
 class text_play{
-    private static String direction;
-
     public static void intro(){
         Scanner console = new Scanner(System.in);
         System.out.print("You are stuck in an abandoned house...");
@@ -61,50 +66,5 @@ class text_play{
         console.nextLine();
         System.out.print("Shocked, you realize that YOU are the DRAGON!");
         console.nextLine();
-    }
-
-   //determines whether theres a pit to start over, a bat or thorns to decrease health, or continue without any damage
-    
-   /* public static void trap_or_safe(){
-        Random number = new Random();
-        Integer num = number.nextInt(100) + 1;
-        
-        if(num <= 30){
-            //30 % pit(start over)
-        }
-        else if(num > 30 and num <=60){
-            //30% harm from either a bat or thorns
-             Random choice = new Random();
-            Integer bot = choice.nextInt(2) + 1;
-            
-            if(bot.equals(1){
-                //15% bats(harm health(-1))
-            }
-            else{
-                //15% thorns(harm health (-.5))
-            }
-        }
-        else{
-            //40% safe continue
-        }
-        */
-    public static void directions(){
-        Scanner go = new Scanner(System.in);
-        System.out.print("\nWhat direction do you wish to go? (left, right, straight)");
-        direction = go.nextLine();
-
-        if(direction.equals("left")){
-            System.out.print("You turned left...");
-        }
-        else if(direction.equals("right")){
-            System.out.print("You turned right...");
-        }
-        else if(direction.equals("straight")){
-            System.out.print("You continued walking straight...");
-        }
-        else{
-            System.out.println("That is not a direction. Try again...");
-            text_play.directions();
-        }
     }
 }
