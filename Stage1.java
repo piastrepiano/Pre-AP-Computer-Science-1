@@ -33,7 +33,7 @@ public class Stage1 {
 
         //30 % pit(start over)
         if (num <= 30) {
-            System.out.println("Oh no! You fell in a pit back to where you started!");
+            System.out.println("\nOh no! You fell in a pit back to where you started!");
             //start over
             return false;
         }
@@ -52,7 +52,6 @@ public class Stage1 {
                 System.out.println("\nYou got pricked by a thorn bush next to you.\nHealth decreases by 0.5.");
                 health -= 0.5;
             }
-            System.out.print(getHealth());
             //counter +1
             return true;
         }
@@ -69,13 +68,13 @@ public class Stage1 {
         direction = go.nextLine();
 
         if (direction.equals("left")) {
-            System.out.print("You turned left...");
+            System.out.println("You turned left...");
         }
         else if (direction.equals("right")) {
-            System.out.print("You turned right...");
+            System.out.println("You turned right...");
         }
         else if (direction.equals("straight")) {
-            System.out.print("You continued walking straight...");
+            System.out.println("You continued walking straight...");
         }
         else {
             System.out.println("That is not a direction. Try again...");
