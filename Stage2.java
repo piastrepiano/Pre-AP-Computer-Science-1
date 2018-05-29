@@ -13,6 +13,9 @@ import java.util.Scanner;
 
 public class Stage2 {
     public Scanner console = new Scanner(System.in);
+    public boolean china = false;
+    public boolean amazon_forest = false;
+
     public void ending1(){
         System.out.print("\nOh look! There's a treasure chest! You opened it and collected a ");
         Random key = new Random();
@@ -61,9 +64,9 @@ public class Stage2 {
         System.out.println("This is possible by collecting orbs." +
                 "\nThere are 5 different types of orbs available in this temple: fire, water, psychic, wind, and ice;");
         console.nextLine();
-        System.out.print("\nhiss...hiss...My introduction is done. Let's go Massster.");
+        System.out.println("hiss...hiss...My introduction is done. Let's go Massster.");
         console.nextLine();
-        china_maze();
+        china = true;
     }
 
     public void amazon_river_intro(){
@@ -79,16 +82,24 @@ public class Stage2 {
         System.out.println("There will be enemies as well as orbs on your way. These orbs will help you defeat enemies and stay alive." +
                 "\nThe 5 different types of orbs available in this forest are poison, water, earth, wind, and bug;");
         console.nextLine();
-        System.out.print("\nOO OO AWW AWW!!! My introduction is done! Let's go Alpha!");
+        System.out.println("OO OO AWW AWW!!! My introduction is done! Let's go Alpha!");
         console.nextLine();
-        amazon_river_maze();
+        amazon_forest = true;
     }
 
+    public void direction(){
+        if(china){
+            china_maze();
+        }
+        else if(amazon_forest){
+            amazon_river_maze();
+        }
+    }
     public void china_maze(){
-        //china
+        //Enemies(dragon slayer, phoenix, nine tailed fox
     }
 
     public void amazon_river_maze(){
-        //amazon forest
+        //Enemies(dragon slayer, poachers, yeti
     }
 }
