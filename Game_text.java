@@ -76,13 +76,13 @@ class text_play{
         console.nextLine();
         System.out.print("A mirror appears on your right. You look at it and see a dragon standing before you...");
         console.nextLine();
-        System.out.print("Shocked, you realize that YOU are the DRAGON!");
+        System.out.print("Shocked, you realize that YOU are the DRAGON!\n");
         console.nextLine();
         System.out.print((char)34 + "The goal for you, I'll recite in verse:");
-        System.out.println("Through twist and turns, find the key and lift the curse.");
+        System.out.println("\nThrough twist and turns, find the key and lift the curse.");
         System.out.println("If you wish to leave this house unharmed, you must save Eliteless!!!" + (char)34);
         console.nextLine();
-        System.out.print("\nThe ground shakes and the mysterious orb explodes");
+        System.out.print("The ground shakes and the mysterious orb explodes");
         console.nextLine();
     }
 }
