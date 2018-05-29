@@ -30,6 +30,7 @@ public class Game_text {
         //STAGE 2
         //china or amazon forest guide
         coar_maze1.ending1();
+        coar_maze1.direction();
 
         /*STAGE 3
             Maze China teleports to Maze Amazon River
