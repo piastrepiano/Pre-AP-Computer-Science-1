@@ -26,26 +26,14 @@ public class Game_text {
                 beginning_maze.recount();
             }
         }
-        //end of maze
-        coar_maze1.ending1();
 
         //STAGE 2
-
-        /* STAGE 2
-            Maze China
-                Yellow key teleports you to China and becomes your partner...a serpent
-                    Enemies(dragon slayer, (2 others for serpent)
-            Maze Amazon River
-                Red key teleports you to the amazon river and becomes your partner...a gorilla
-                    Enemies(dragon slayer, (2 others for gorilla)
-
-            find the door(portal)
-        */
+        //china or amazon forest guide
+        coar_maze1.ending1();
 
         /*STAGE 3
             Maze China teleports to Maze Amazon River
             Maze Amazon River teleports to Maze China
-
                 Partner dies from new environment
                 Survive then spaceship to final stage
          */
