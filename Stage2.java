@@ -15,6 +15,7 @@ public class Stage2 {
     public Scanner console = new Scanner(System.in);
     public boolean china = false;
     public boolean amazon_forest = false;
+    public String direction;
 
     public void ending1(){
         System.out.print("\nOh look! There's a treasure chest! You opened it and collected a ");
@@ -88,6 +89,10 @@ public class Stage2 {
     }
 
     public void direction(){
+        Scanner lor = new Scanner(System.in);
+        System.out.print("\nWhat direction do you wish to go? (left, right)");
+        direction = lor.nextLine();
+        
         if(china){
             china_maze();
         }
