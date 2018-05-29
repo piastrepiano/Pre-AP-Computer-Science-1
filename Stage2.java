@@ -3,7 +3,7 @@
                 Yellow key teleports you to China and becomes your partner...a serpent
                     Enemies(dragon slayer, phoenix, nine tailed fox
             Maze Amazon River
-                Red key teleports you to the amazon river and becomes your partner...a gorilla
+                Red key teleports you to the amazon forest and becomes your partner...a gorilla
                     Enemies(dragon slayer, poachers, yeti
             find the door(portal)
         */
@@ -19,6 +19,7 @@ public class Stage2 {
         //red or yellow key
         Integer roy = key.nextInt(2) + 1;
 
+        //Yellow key teleports you to China
         if(roy.equals(1)){
             System.out.print("yellow key.");
             console.nextLine();
@@ -31,6 +32,7 @@ public class Stage2 {
             console.nextLine();
             china_intro();
         }
+        //Red key teleports you to the amazon forest
         else{
             System.out.print("red key.");
             console.nextLine();
@@ -46,6 +48,7 @@ public class Stage2 {
     }
 
     public void china_intro(){
+        //key becomes your partner...a serpent(Apalala)
         System.out.print((char)34 + "Hello there!" + (char)34);
         console.nextLine();
         System.out.print("The key shakes out of your claws and a serpent appears!");
@@ -64,6 +67,7 @@ public class Stage2 {
     }
 
     public void amazon_river_intro(){
+        //key becomes your partner...a gorilla(Chichwa)
         System.out.print((char)34 + "Hello there!" + (char)34);
         console.nextLine();
         System.out.print("The key shakes out of your claws and a gorilla appears!");
