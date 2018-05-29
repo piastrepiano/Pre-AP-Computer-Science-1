@@ -7,23 +7,29 @@ You must write the code to draw the images on the Applet for each object.
 import java.util.Scanner;
 
 public class Game_text {
-    static Beginning_maze beginning_maze = new Beginning_maze();
+    static Stage1 beginning_maze = new Stage1();
+    static Stage2 coar_maze1 = new Stage2();
 
     public static void main(String args[]){
         text_play.intro();
 
-        //stage 1
+        //STAGE 1
         //Enemies-bats, thorns, and pits
-        while(beginning_maze.getCounter() < 3) {
+        //item collected - key (color by random)
+        while(beginning_maze.getCounter() < 4) {
             beginning_maze.directions();
             if(beginning_maze.trap_or_safe()) {
                 beginning_maze.addCounter();
-            } else {
+            }
+            else {
                 //restarts maze
                 beginning_maze.recount();
             }
         }
-        //end of maze find a yellow and red key
+        //end of maze
+        coar_maze1.ending1();
+
+        //STAGE 2
 
         /* STAGE 2
             Maze China
@@ -61,19 +67,16 @@ class text_play{
     public static void intro(){
         Scanner console = new Scanner(System.in);
         System.out.print("You are stuck in an abandoned house...");
-        console.nextLine();
         System.out.print("There are no windows and the room you're in is very dark...");
         console.nextLine();
-        System.out.print("Trying to find the door, you suddenly fall into complete darkness...THUD!!!");
+        System.out.print("Trying to find the door, you suddenly fall into complete darkness...");
         console.nextLine();
-        System.out.print("...");
+        System.out.print("THUD!!!");
         console.nextLine();
         System.out.print("You open your eyes and squint at the sudden brightness. There, a floating orb shines brightly...");
         console.nextLine();
         System.out.print((char)34 + "The goal for you, I'll recite in verse:");
-        console.nextLine();
         System.out.print("Through twist and turns, find the key and lift the curse.");
-        console.nextLine();
         System.out.print("If you wish to leave this house unharmed, you must save Eliteless!!!" + (char)34);
         console.nextLine();
         System.out.print("\nThe mysterious orb explodes and you are brought back into the abandoned house...");
