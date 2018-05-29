@@ -66,8 +66,7 @@ public class Game_text {
 class text_play{
     public static void intro(){
         Scanner console = new Scanner(System.in);
-        System.out.print("You are stuck in an abandoned house...");
-        System.out.print("There are no windows and the room you're in is very dark...");
+        System.out.print("You are stuck in an abandoned house. There are no windows and the room you're in is very dark...");
         console.nextLine();
         System.out.print("Trying to find the door, you suddenly fall into complete darkness...");
         console.nextLine();
