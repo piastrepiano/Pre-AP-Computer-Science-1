@@ -134,12 +134,15 @@ public class Stage2 {
 
             if(enemies.equals(1)){
                 //dragon slayer
+                System.out.println("\nThere is a dragon slayer sitting on a floating chair.");
             }
             else if(enemies.equals(2)){
                 //phoenix
+                System.out.println("\nThere is a phoenix flying above you.");
             }
             else if(enemies.equals(3)){
                 //nine tail fox
+                System.out.println("\nThere is a nine tail fox.");
             }
         }
         else{
@@ -158,12 +161,15 @@ public class Stage2 {
 
             if(enemies.equals(1)){
                 //dragon slayer
+                System.out.println("\nThere is a dragon slayer sitting on a floating chair.");
             }
             else if(enemies.equals(2)){
                 //poachers
+                System.out.println("\nA poacher is hiding behind a bush.");
             }
             else if(enemies.equals(3)){
                 //yeti
+                System.out.println("\nThere lays a sleeping yeti blocking your path.");
             }
         }
         else{
