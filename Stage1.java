@@ -5,7 +5,7 @@ public class Stage1 {
     private String direction;
     public boolean bat = false;
     public boolean thorn = false;
-    
+
     //determines whether there's a pit to start over, a bat or thorns to decrease health, or continue without any damage
 
     public boolean trap_or_safe() {
@@ -23,14 +23,14 @@ public class Stage1 {
             Random choice = new Random();
             Integer bot = choice.nextInt(2) + 1;
 
-            //15% bats(harm health(-1))
+            //15% bats(harm health(-.5))
             if(bot.equals(1)) {
-                System.out.println("\nA bat attacks you.\nHealth decreases by 1.");
+                System.out.println("\nA bat attacks you.\nHealth decreases by 0.5.");
                 bat = true;
             }
-            //15% thorns(harm health (-.5))
+            //15% thorns(harm health (-.25))
             else {
-                System.out.println("\nYou got pricked by a thorn bush next to you.\nHealth decreases by 0.5.");
+                System.out.println("\nYou got pricked by a thorn bush next to you.\nHealth decreases by 0.25.");
                 thorn = true;
             }
             //counter +1
