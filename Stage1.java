@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Stage1 {
     private String direction;
-    private int counter;
+    //private int counter;
     private double health;
 
     /*public Stage1() {
