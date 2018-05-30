@@ -6,7 +6,7 @@ public class Stage1 {
     private int counter;
     private double health;
 
-    public Stage1() {
+    /*public Stage1() {
         counter = 0;
         health = 5;
     }
@@ -19,7 +19,7 @@ public class Stage1 {
     }
     public void recount(){
         counter = 0;
-    }
+    } */
 
     public double getHealth(){
         return health;
