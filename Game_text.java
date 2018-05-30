@@ -7,6 +7,7 @@ You must write the code to draw the images on the Applet for each object.
 import java.util.Scanner;
 
 public class Game_text {
+    static Status status = new Status();
     static Stage1 beginning_maze = new Stage1();
     static Stage2 coar_maze1 = new Stage2();
 
@@ -16,21 +17,31 @@ public class Game_text {
         //STAGE 1
         //Enemies-bats, thorns, and pits
         //item collected - key (color by random)
-        while(beginning_maze.getCounter() < 4) {
+        while(status.getCounter() < 4) {
             beginning_maze.directions();
             if(beginning_maze.trap_or_safe()) {
-                beginning_maze.addCounter();
+                status.addCounter();
             }
             else {
                 //restarts maze
-                beginning_maze.recount();
+                status.recount();
             }
         }
 
         //STAGE 2
         //china or amazon forest guide
         coar_maze1.ending1();
-        coar_maze1.direction();
+        while(status.getCounter() < 10) {
+            coar_maze1.direction();
+            if (coar_maze1.china) {
+                coar_maze1.china_enemies();
+                coar_maze1.china_orbs();
+            } else {
+                coar_maze1.amazon_river_enemies();
+                coar_maze1.amazon_river_orbs();
+            }
+            status.addCounter();
+        }
 
         /*STAGE 3
             Maze China teleports to Maze Amazon River
