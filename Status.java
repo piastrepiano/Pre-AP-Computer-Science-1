@@ -20,5 +20,11 @@ public class Status {
     public double getHealth(){
         return health;
     }
+    public void bat(){
+        health -= 1;
+    }
+    public void thorn(){
+        health -= 0.5;
+    }
 
 }
