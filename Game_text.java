@@ -21,6 +21,12 @@ public class Game_text {
             beginning_maze.directions();
             if(beginning_maze.trap_or_safe()) {
                 status.addCounter();
+                if(beginning_maze.bat){
+                    status.bat();
+                }
+                else if(beginning_maze.thorn){
+                    status.thorn();
+                }
             }
             else {
                 //restarts maze
