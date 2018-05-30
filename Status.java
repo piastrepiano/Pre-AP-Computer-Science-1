@@ -21,10 +21,10 @@ public class Status {
         return health;
     }
     public void bat(){
-        health -= 1;
+        health -= 0.5;
     }
     public void thorn(){
-        health -= 0.5;
+        health -= 0.25;
     }
 
 }
