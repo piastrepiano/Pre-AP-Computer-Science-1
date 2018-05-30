@@ -3,29 +3,10 @@ import java.util.Scanner;
 
 public class Stage1 {
     private String direction;
-    //private int counter;
-    private double health;
-
-    /*public Stage1() {
-        counter = 0;
-        health = 5;
-    }
-
-    public int getCounter(){
-        return counter;
-    }
-    public void addCounter(){
-        counter += 1;
-    }
-    public void recount(){
-        counter = 0;
-    } */
-
-    public double getHealth(){
-        return health;
-    }
-
-    //determines whether theres a pit to start over, a bat or thorns to decrease health, or continue without any damage
+    public boolean bat = false;
+    public boolean thorn = false;
+    
+    //determines whether there's a pit to start over, a bat or thorns to decrease health, or continue without any damage
 
     public boolean trap_or_safe() {
         Random number = new Random();
@@ -45,12 +26,12 @@ public class Stage1 {
             //15% bats(harm health(-1))
             if(bot.equals(1)) {
                 System.out.println("\nA bat attacks you.\nHealth decreases by 1.");
-                health -= 1;
+                bat = true;
             }
             //15% thorns(harm health (-.5))
             else {
                 System.out.println("\nYou got pricked by a thorn bush next to you.\nHealth decreases by 0.5.");
-                health -= 0.5;
+                thorn = true;
             }
             //counter +1
             return true;
