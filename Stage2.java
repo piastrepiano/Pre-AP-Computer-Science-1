@@ -13,9 +13,18 @@ import java.util.Scanner;
 
 public class Stage2 {
     public Scanner console = new Scanner(System.in);
+    public static Scanner collect = new Scanner(System.in);
     public boolean china = false;
     public boolean amazon_forest = false;
     public String direction;
+
+    //fire, water, psychic, wind ; , poison earth
+    public boolean water = false;
+    public boolean fire = false;
+    public boolean psychic = false;
+    public boolean wind = false;
+    public boolean poison = false;
+    public boolean earth = false;
 
     public void ending1(){
         System.out.print("\nOh look! There's a treasure chest! You opened it and collected a ");
@@ -178,10 +187,157 @@ public class Stage2 {
     }
 
     public void china_orbs(){
-        //orbs: fire, water, psychic, wind, and ice
+        //orbs: fire, water, psychic, wind ; NONE
+        Random percentage = new Random();
+        Integer orbsC = percentage.nextInt(100) + 1;
+
+        if(orbsC <= 20){
+            //fire
+            System.out.print("\nYou found a FIRE orb! Do you want to collect it?");
+            collect.nextLine();
+            String grab = collect.nextLine();
+            if(grab.equals("yes")){
+                System.out.print("\nYou picked up the FIRE orb. You've unlocked your fire ability!");
+                fire = true;
+            }
+            else if(grab.equals("no")){
+                System.out.print("\nYou didn't pick up the FIRE orb.");
+                fire = false;
+            }
+            else{
+                System.out.print("\nYou ignored the orbs existence.");
+            }
+        }
+        else if(orbsC >= 21 & orbsC <=40){
+            //water
+            System.out.print("\nYou found a WATER orb! Do you want to collect it?");
+            collect.nextLine();
+            String grab = collect.nextLine();
+            if(grab.equals("yes")){
+                System.out.print("\nYou picked up the WATER orb. You've unlocked your water ability!");
+                water = true;
+            }
+            else if(grab.equals("no")){
+                System.out.print("\nYou didn't pick up the WATER orb.");
+                water = false;
+            }
+            else{
+                System.out.print("\nYou ignored the orbs existence.");
+            }
+        }
+        else if(orbsC >= 41 & orbsC <= 60){
+            //psychic
+            System.out.print("\nYou found a PSYCHIC orb! Do you want to collect it?");
+            collect.nextLine();
+            String grab = collect.nextLine();
+            if(grab.equals("yes")){
+                System.out.print("\nYou picked up the PSYCHIC orb. You've unlocked your psychic ability!");
+                psychic = true;
+            }
+            else if(grab.equals("no")){
+                System.out.print("\nYou didn't pick up the PSYCHIC orb.");
+            }
+            else{
+                System.out.print("\nYou ignored the orbs existence.");
+            }
+        }
+        else if(orbsC >= 61 & orbsC <=80){
+            //wind
+            System.out.print("\nYou found a WIND orb! Do you want to collect it?");
+            collect.nextLine();
+            String grab = collect.nextLine();
+            if(grab.equals("yes")){
+                System.out.print("\nYou picked up the WIND orb. You've unlocked your wind ability!");
+                wind = true;
+            }
+            else if(grab.equals("no")){
+                System.out.print("\nYou didn't pick up the PSYCHIC orb.");
+                wind = false;
+            }
+            else{
+                System.out.print("\nYou ignored the orbs existence.");
+            }
+        }
+        else if(orbsC >= 81 & orbsC <=100){
+            //None
+        }
     }
 
     public void amazon_river_orbs(){
-        //orbs: poison, water, earth, wind, and bug
+        //orbs: poison, water, earth, wind, none
+        Random percentage = new Random();
+        Integer orbsA = percentage.nextInt(100) + 1;
+
+        if(orbsA <= 20){
+            //poison
+            System.out.print("\nYou found a POISON orb! Do you want to collect it?");
+            collect.nextLine();
+            String grab = collect.nextLine();
+            if(grab.equals("yes")){
+                System.out.print("\nYou picked up the POISON orb. You've unlocked your poison ability!");
+                poison = true;
+            }
+            else if(grab.equals("no")){
+                System.out.print("\nYou didn't pick up the POISON orb.");
+                poison = false;
+            }
+            else{
+                System.out.print("\nYou ignored the orbs existence.");
+            }
+        }
+        else if(orbsA >= 21 & orbsA <=40){
+            //water
+            System.out.print("\nYou found a WATER orb! Do you want to collect it?");
+            collect.nextLine();
+            String grab = collect.nextLine();
+            if(grab.equals("yes")){
+                System.out.print("\nYou picked up the WATER orb. You've unlocked your water ability!");
+                water = true;
+            }
+            else if(grab.equals("no")){
+                System.out.print("\nYou didn't pick up the WATER orb.");
+                water = false;
+            }
+            else{
+                System.out.print("\nYou ignored the orbs existence.");
+            }
+        }
+        else if(orbsA >= 41 & orbsA <= 60){
+            //earth
+            System.out.print("\nYou found an EARTH orb! Do you want to collect it?");
+            collect.nextLine();
+            String grab = collect.nextLine();
+            if(grab.equals("yes")){
+                System.out.print("\nYou picked up the EARTH orb. You've unlocked your earth ability!");
+                earth = true;
+            }
+            else if(grab.equals("no")){
+                System.out.print("\nYou didn't pick up the EARTH orb.");
+                earth = false;
+            }
+            else{
+                System.out.print("\nYou ignored the orbs existence.");
+            }
+        }
+        else if(orbsA >= 61 & orbsA <=80){
+            //wind
+            System.out.print("\nYou found a WIND orb! Do you want to collect it?");
+            collect.nextLine();
+            String grab = collect.nextLine();
+            if(grab.equals("yes")){
+                System.out.print("\nYou picked up the WIND orb. You've unlocked your wind ability!");
+                wind = true;
+            }
+            else if(grab.equals("no")){
+                System.out.print("\nYou didn't pick up the WIND orb.");
+                wind = false;
+            }
+            else{
+                System.out.print("\nYou ignored the orbs existence.");
+            }
+        }
+        else if(orbsA >= 81 & orbsA <=100){
+            //None
+        }
     }
 }
