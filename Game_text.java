@@ -10,6 +10,7 @@ public class Game_text {
     static Status status = new Status();
     static Stage1 beginning_maze = new Stage1();
     static Stage2 coar_maze1 = new Stage2();
+    static China_maze china_maze = new China_maze();
 
     public static void main(String args[]){
         text_play.intro();
@@ -40,8 +41,8 @@ public class Game_text {
         while(status.getCounter() < 10) {
             coar_maze1.direction();
             if (coar_maze1.china) {
-                coar_maze1.china_enemies();
-                coar_maze1.china_orbs();
+                china_maze.china_enemies();
+                china_maze.china_orbs();
             } else {
                 coar_maze1.amazon_river_enemies();
                 coar_maze1.amazon_river_orbs();
