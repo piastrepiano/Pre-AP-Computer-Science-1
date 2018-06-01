@@ -80,6 +80,10 @@ public class Status {
             monster_maze();
             System.out.print("The monster attacks you briefly as you run away.\nYour health decreased by one.");
         }
+        else{
+            System.out.print("That doesn't answer the question.");
+            fight();
+        }
     }
 
 }
