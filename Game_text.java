@@ -44,7 +44,8 @@ public class Game_text {
             if (coar_maze1.china) {
                 china_maze.china_enemies();
                 china_maze.china_orbs();
-            } else {
+            }
+            else if(coar_maze1.amazon_forest){
                 amazon_jungle.amazon_river_enemies();
                 amazon_jungle.amazon_river_orbs();
             }
