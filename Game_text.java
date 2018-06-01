@@ -39,6 +39,7 @@ public class Game_text {
         //STAGE 2
         //china or amazon forest guide
         coar_maze1.ending1();
+        status.recount();
         while(status.getCounter() < 6) {
             coar_maze1.direction();
             if (coar_maze1.china) {
@@ -51,6 +52,28 @@ public class Game_text {
             }
             status.addCounter();
         }
+        
+        status.recount();
+        /*
+        if (coar_maze1.china){
+            //stage 3 intro
+            }
+        else if (coar_maze1.amazon_forest){
+            //stage 3 intro
+            }
+            
+        while(status.getCounter() < 6){
+            coar_maze1.direction();
+            if (coar_maze1.china){
+                amazon_jungle.amazon_river_enemies();
+                amazon_jungle.amazon_river_orbs();
+            }
+            else if (coar_maze1.amazon_forest){
+                china_maze.china_enemies();
+                china_maze.china_orbs();
+            }
+        }
+            */
 
         /*STAGE 3
             Maze China teleports to Maze Amazon River
