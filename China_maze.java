@@ -17,16 +17,18 @@ public class China_maze {
             if(enemies.equals(1)){
                 //dragon slayer
                 System.out.println("\nThere is a dragon slayer sitting on a floating chair.");
+                status.fight();
             }
             else if(enemies.equals(2)){
                 //phoenix
                 System.out.println("\nThere is a phoenix flying above you.");
+                status.fight();
             }
             else if(enemies.equals(3)){
                 //nine tail fox
                 System.out.println("\nThere is a nine tail fox.");
+                status.fight();
             }
-            status.fight();
         }
         else{
             //safe
@@ -50,11 +52,11 @@ public class China_maze {
         else if(orbsC >= 31 & orbsC <=40){
             wind();
         }
-        else if(orbsC >= 41 & orbsC <=90){
-            //No orbs
-        }
-        else if(orbsC >= 91 & orbsC <= 100){
+        else if(orbsC >= 41 & orbsC <= 50){
             status.healing_orb();
+        }
+        else if(orbsC >= 51 & orbsC <= 100){
+            //no orbs
         }
     }
 

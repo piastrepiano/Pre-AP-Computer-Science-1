@@ -18,19 +18,21 @@ public class Amazon_jungle {
             if(enemies.equals(1)){
                 //dragon slayer
                 System.out.println("\nThere is a dragon slayer sitting on a floating chair.");
+                status.fight();
             }
             else if(enemies.equals(2)){
                 //poachers
                 System.out.println("\nA poacher is hiding behind a bush.");
+                status.fight();
             }
             else if(enemies.equals(3)){
                 //yeti
                 System.out.println("\nThere lays a sleeping yeti blocking your path.");
+                status.fight();
             }
-            status.fight();
         }
         else{
-            //safe
+            System.out.print("\nThere are no enemies here.");
         }
     }
 
@@ -52,11 +54,11 @@ public class Amazon_jungle {
         else if(orbsA >= 31 & orbsA <=40){
             wind();
         }
-        else if(orbsA >= 41 & orbsA <= 90){
-            //No orbs
-        }
-        else if(orbsA >= 91 & orbsA <= 100){
+        else if(orbsA >= 41 & orbsA <= 50){
             status.healing_orb();
+        }
+        else if(orbsA >= 51 & orbsA <= 100){
+            //no orbs
         }
     }
 
