@@ -14,7 +14,7 @@ public class Stage1 {
 
         //30 % pit(start over)
         if (num <= 30) {
-            System.out.println("\nOh no! You fell in a pit back to where you started!");
+            System.out.println("Oh no! You fell in a pit back to where you started!");
             //start over
             return false;
         }
@@ -25,12 +25,12 @@ public class Stage1 {
 
             //15% bats(harm health(-.5))
             if(bot.equals(1)) {
-                System.out.println("\nA bat attacks you.\nHealth decreases by 0.5.");
+                System.out.println("A bat attacks you.\nHealth decreases by 0.5.");
                 bat = true;
             }
             //15% thorns(harm health (-.25))
             else {
-                System.out.println("\nYou got pricked by a thorn bush next to you.\nHealth decreases by 0.25.");
+                System.out.println("You got pricked by a thorn bush next to you.\nHealth decreases by 0.25.");
                 thorn = true;
             }
             //counter +1

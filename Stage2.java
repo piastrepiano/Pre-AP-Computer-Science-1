@@ -67,8 +67,7 @@ public class Stage2 {
         System.out.println("This is possible by collecting orbs." +
                 "\nThere are 5 different types of orbs available in this temple: fire, water, psychic, wind, and ice.");
         console.nextLine();
-        System.out.println("hiss...hiss...My introduction is done. Let's go Massster." + (char)34);
-        console.nextLine();
+        System.out.print("\nhiss...hiss...My introduction is done. Let's go Massster." + (char)34);
         china = true;
     }
 
@@ -85,8 +84,7 @@ public class Stage2 {
         System.out.println("There will be enemies as well as orbs on your way. These orbs will help you defeat enemies and stay alive." +
                 "\nThe 5 different types of orbs available in this forest are poison, water, earth, wind, and bug.");
         console.nextLine();
-        System.out.println("OO OO AWW AWW!!! My introduction is done! Let's go Alpha!" + (char)34);
-        console.nextLine();
+        System.out.print("\nOO OO AWW AWW!!! My introduction is done! Let's go Alpha!" + (char)34);
         amazon_forest = true;
     }
 

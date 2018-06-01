@@ -67,14 +67,14 @@ public class Amazon_jungle {
 
         String grab = yn.nextLine();
         if(grab.equals("yes")){
-            System.out.print("\nYou picked up the POISON orb. You've unlocked your poison ability!");
+            System.out.print("You picked up the POISON orb. You've unlocked your poison ability!");
             status.poison = true;
         }
         else if(grab.equals("no")){
-            System.out.print("\nYou didn't pick up the POISON orb.");
+            System.out.print("You didn't pick up the POISON orb.");
         }
         else{
-            System.out.print("\nYou ignored the orbs existence.");
+            System.out.print("You ignored the orbs existence.");
         }
     }
 
@@ -83,14 +83,14 @@ public class Amazon_jungle {
 
         String grab = yn.nextLine();
         if(grab.equals("yes")){
-            System.out.print("\nYou picked up the WATER orb. You've unlocked your water ability!");
+            System.out.print("You picked up the WATER orb. You've unlocked your water ability!");
             status.water = true;
         }
         else if(grab.equals("no")){
-            System.out.print("\nYou didn't pick up the WATER orb.");
+            System.out.print("You didn't pick up the WATER orb.");
         }
         else{
-            System.out.print("\nYou ignored the orbs existence.");
+            System.out.print("You ignored the orbs existence.");
         }
     }
 
@@ -99,14 +99,14 @@ public class Amazon_jungle {
 
         String grab = yn.nextLine();
         if(grab.equals("yes")){
-            System.out.print("\nYou picked up the EARTH orb. You've unlocked your earth ability!");
+            System.out.print("You picked up the EARTH orb. You've unlocked your earth ability!");
             status.earth = true;
         }
         else if(grab.equals("no")){
-            System.out.print("\nYou didn't pick up the EARTH orb.");
+            System.out.print("You didn't pick up the EARTH orb.");
         }
         else{
-            System.out.print("\nYou ignored the orbs existence.");
+            System.out.print("You ignored the orbs existence.");
         }
     }
 
@@ -115,14 +115,14 @@ public class Amazon_jungle {
 
         String grab = yn.nextLine();
         if(grab.equals("yes")){
-            System.out.print("\nYou picked up the WIND orb. You've unlocked your wind ability!");
+            System.out.print("You picked up the WIND orb. You've unlocked your wind ability!");
             status.wind = true;
         }
         else if(grab.equals("no")){
-            System.out.print("\nYou didn't pick up the WIND orb.");
+            System.out.print("You didn't pick up the WIND orb.");
         }
         else{
-            System.out.print("\nYou ignored the orbs existence.");
+            System.out.print("You ignored the orbs existence.");
         }
     }
 }

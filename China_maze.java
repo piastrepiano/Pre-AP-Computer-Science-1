@@ -65,14 +65,14 @@ public class China_maze {
         String grab = yn.nextLine();
 
         if(grab.equals("yes")){
-            System.out.print("\nYou picked up the FIRE orb. You've unlocked your fire ability!");
+            System.out.print("You picked up the FIRE orb. You've unlocked your fire ability!");
             status.fire = true;
         }
         else if(grab.equals("no")){
-            System.out.print("\nYou didn't pick up the FIRE orb.");
+            System.out.print("You didn't pick up the FIRE orb.");
         }
         else{
-            System.out.print("\nYou ignored the orbs existence.");
+            System.out.print("You ignored the orbs existence.");
         }
     }
     public void water(){
@@ -80,14 +80,14 @@ public class China_maze {
 
         String grab = yn.nextLine();
         if(grab.equals("yes")){
-            System.out.print("\nYou picked up the WATER orb. You've unlocked your water ability!");
+            System.out.print("You picked up the WATER orb. You've unlocked your water ability!");
             status.water = true;
         }
         else if(grab.equals("no")){
-            System.out.print("\nYou didn't pick up the WATER orb.");
+            System.out.print("You didn't pick up the WATER orb.");
         }
         else{
-            System.out.print("\nYou ignored the orbs existence.");
+            System.out.print("You ignored the orbs existence.");
         }
     }
     public void psychic(){
@@ -96,14 +96,14 @@ public class China_maze {
         String grab = yn.nextLine();
 
         if(grab.equals("yes")){
-            System.out.print("\nYou picked up the PSYCHIC orb. You've unlocked your psychic ability!");
+            System.out.print("You picked up the PSYCHIC orb. You've unlocked your psychic ability!");
             status.psychic = true;
         }
         else if(grab.equals("no")){
-            System.out.print("\nYou didn't pick up the PSYCHIC orb.");
+            System.out.print("You didn't pick up the PSYCHIC orb.");
         }
         else{
-            System.out.print("\nYou ignored the orbs existence.");
+            System.out.print("You ignored the orbs existence.");
         }
     }
     public void wind(){
@@ -111,14 +111,14 @@ public class China_maze {
 
         String grab = yn.nextLine();
         if(grab.equals("yes")){
-            System.out.print("\nYou picked up the WIND orb. You've unlocked your wind ability!");
+            System.out.print("You picked up the WIND orb. You've unlocked your wind ability!");
             status.wind = true;
         }
         else if(grab.equals("no")){
-            System.out.print("\nYou didn't pick up the PSYCHIC orb.");
+            System.out.print("You didn't pick up the PSYCHIC orb.");
         }
         else{
-            System.out.print("\nYou ignored the orbs existence.");
+            System.out.print("You ignored the orbs existence.");
         }
     }
 }
