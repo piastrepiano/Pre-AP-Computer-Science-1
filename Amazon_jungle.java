@@ -5,34 +5,34 @@ public class Amazon_jungle {
     public Scanner yn = new Scanner(System.in);
     static Status status = new Status();
 
-
     public void amazon_river_enemies(){
         //Enemies(dragon slayer, poachers, yeti
         Random percentage = new Random();
         Integer dpys = percentage.nextInt(100) + 1;
 
-        if(dpys <= 30){
+        if(dpys <= 40){
             Random enemy = new Random();
             Integer enemies = enemy.nextInt(3) + 1;
 
             if(enemies.equals(1)){
                 //dragon slayer
                 System.out.println("\nThere is a dragon slayer sitting on a floating chair.");
-                status.fight();
+                status.dragon = true;
             }
             else if(enemies.equals(2)){
                 //poachers
                 System.out.println("\nA poacher is hiding behind a bush.");
-                status.fight();
+                status.poachers = true;
             }
             else if(enemies.equals(3)){
                 //yeti
                 System.out.println("\nThere lays a sleeping yeti blocking your path.");
-                status.fight();
+                status.yeti = true;
             }
+            status.fight();
         }
         else{
-            System.out.print("\nThere are no enemies here.");
+            //safe
         }
     }
 
@@ -55,7 +55,7 @@ public class Amazon_jungle {
             wind();
         }
         else if(orbsA >= 41 & orbsA <= 50){
-            status.healing_orb();
+            healing_orb();
         }
         else if(orbsA >= 51 & orbsA <= 100){
             //no orbs
@@ -123,6 +123,28 @@ public class Amazon_jungle {
         }
         else{
             System.out.print("You ignored the orbs existence.");
+        }
+    }
+
+    public void healing_orb(){
+        System.out.print("\nYou found a HEALING orb! Do you want to collect it?");
+
+        String grab = yn.nextLine();
+        if(grab.equals("yes")){
+            System.out.print("\nYou picked up the HEALING orb!");
+            status.healing = true;
+            System.out.print("\nDo you want to use this orb?");
+            String heal_or_not = yn.nextLine();
+            if(heal_or_not.equals("yes")) {
+                status.heal();
+                status.healing = false;
+            }
+        }
+        else if(grab.equals("no")){
+            System.out.print("\nYou didn't pick up the HEALING orb.");
+        }
+        else{
+            System.out.print("\nYou ignored the orbs existence.");
         }
     }
 }

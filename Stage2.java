@@ -13,9 +13,11 @@ import java.util.Scanner;
 
 public class Stage2 {
     public Scanner console = new Scanner(System.in);
+    public Scanner lor = new Scanner(System.in);
 
     public boolean china = false;
     public boolean amazon_forest = false;
+    public boolean partner = true;
 
     public String direction;
 
@@ -54,45 +56,44 @@ public class Stage2 {
     }
 
     public void china_intro(){
-        //key becomes your partner...a serpent(Apalala)
+        //key becomes your partner...a serpent(apalala)
         System.out.print((char)34 + "Hello there!" + (char)34);
         console.nextLine();
         System.out.print("The key shakes out of your claws and a serpent appears!");
         console.nextLine();
         System.out.print((char)34 + "hiss...hiss...I've been expecting you...Welcome to CHINAAAA~~!");
         console.nextLine();
-        System.out.println("My name is Apalala and I'm here to assist you in your journey of sssaving Elitelessss!");
+        System.out.println("My name is Sssiapart and I'm here to assist you in your journey of sssaving Elitelessss!");
         System.out.println("You must enter and go to the heart of the temple where the alter laysss.");
         System.out.println("You may encounter enemies as you go. To defeat them, you have to unlock the powersss from within.");
         System.out.println("This is possible by collecting orbs." +
                 "\nThere are 5 different types of orbs available in this temple: fire, water, psychic, wind, and ice.");
         console.nextLine();
-        System.out.print("\nhiss...hiss...My introduction is done. Let's go Massster." + (char)34);
+        System.out.println("hiss...hiss...My introduction is done. Let's go Massster." + (char)34);
         china = true;
     }
 
     public void amazon_river_intro(){
-        //key becomes your partner...a gorilla(Chichwa)
+        //key becomes your partner...a gorilla(Kongo)
         System.out.print((char)34 + "Hello there!" + (char)34);
         console.nextLine();
         System.out.print("The key shakes out of your claws and a gorilla appears!");
         console.nextLine();
         System.out.print((char)34 + "OO OO AWW AWW! Welcome to AMAZON JUNGLE!");
         console.nextLine();
-        System.out.println("My name is Chichwa and I'm here to assist you in your journey of saving Eliteless,");
+        System.out.println("My name is Kongo and I'm here to assist you in your journey of saving Eliteless,");
         System.out.println("You must find the Amazon River and follow its trail towards the sun.");
         System.out.println("There will be enemies as well as orbs on your way. These orbs will help you defeat enemies and stay alive." +
                 "\nThe 5 different types of orbs available in this forest are poison, water, earth, wind, and bug.");
         console.nextLine();
-        System.out.print("\nOO OO AWW AWW!!! My introduction is done! Let's go Alpha!" + (char)34);
+        System.out.println("OO OO AWW AWW!!! My introduction is done! Let's go Alpha!" + (char)34);
         amazon_forest = true;
     }
 
     public void direction(){
-        Scanner lor = new Scanner(System.in);
-
+        System.out.print("\nWhat direction do you wish to go?");
         if(china){
-            System.out.print("\nWhat direction do you wish to go? (left, right)");
+            System.out.print("(left, right)");
             direction = lor.nextLine();
 
             if(direction.equals("left")){
@@ -103,10 +104,11 @@ public class Stage2 {
             }
             else{
                 System.out.print("That is not a direction. Try again.");
+                direction();
             }
         }
         else if(amazon_forest){
-            System.out.print("\nWhat direction do you wish to go? (left, right, straight)");
+            System.out.print("(left, right, straight)");
             direction = lor.nextLine();
 
             if(direction.equals("left")){
@@ -120,6 +122,7 @@ public class Stage2 {
             }
             else{
                 System.out.print("That is not a direction. Try again.");
+                direction();
             }
         }
     }

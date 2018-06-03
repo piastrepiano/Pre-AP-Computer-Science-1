@@ -10,6 +10,7 @@ public class Game_text {
     static Status status = new Status();
     static Stage1 beginning_maze = new Stage1();
     static Stage2 coar_maze1 = new Stage2();
+    static Stage3 coar_maze2 = new Stage3();
     static China_maze china_maze = new China_maze();
     static Amazon_jungle amazon_jungle = new Amazon_jungle();
 
@@ -19,15 +20,15 @@ public class Game_text {
         //STAGE 1
         //Enemies-bats, thorns, and pits
         //item collected - key (color by random)
-        while(status.getCounter() < 4) {
+        while(status.getCounter() < 3) {
             beginning_maze.directions();
             if(beginning_maze.trap_or_safe()) {
                 status.addCounter();
                 if(beginning_maze.bat){
-                    status.bat();
+                    status.half();
                 }
                 else if(beginning_maze.thorn){
-                    status.thorn();
+                    status.fourth();
                 }
             }
             else {
@@ -40,29 +41,38 @@ public class Game_text {
         //china or amazon forest guide
         coar_maze1.ending1();
         status.recount();
-        while(status.getCounter() < 6) {
+        while(status.getCounter() < 5) {
             coar_maze1.direction();
             if (coar_maze1.china) {
-                china_maze.china_enemies();
                 china_maze.china_orbs();
+                china_maze.china_enemies();
             }
             else if(coar_maze1.amazon_forest){
-                amazon_jungle.amazon_river_enemies();
                 amazon_jungle.amazon_river_orbs();
+                amazon_jungle.amazon_river_enemies();
             }
             status.addCounter();
         }
-        
+
         status.recount();
-        /*
+        coar_maze1.partner = false;
+
         if (coar_maze1.china){
             //stage 3 intro
+            coar_maze2.ending2_china();
             }
         else if (coar_maze1.amazon_forest){
             //stage 3 intro
+            coar_maze2.ending2_amazon();
             }
-            
-        while(status.getCounter() < 6){
+
+        /*STAGE 3
+            Maze China teleports to Maze Amazon River
+            Maze Amazon River teleports to Maze China
+                Partner dies from new environment
+                Survive then spaceship to final stage
+         */
+        while(status.getCounter() < 5){
             coar_maze1.direction();
             if (coar_maze1.china){
                 amazon_jungle.amazon_river_enemies();
@@ -73,14 +83,11 @@ public class Game_text {
                 china_maze.china_orbs();
             }
         }
-            */
+        status.recount();
 
-        /*STAGE 3
-            Maze China teleports to Maze Amazon River
-            Maze Amazon River teleports to Maze China
-                Partner dies from new environment
-                Survive then spaceship to final stage
-         */
+        while(status.getCounter() < 7){
+            //asdf
+        }
 
         /*STAGE 4 - FINAL STAGE
             @ space
@@ -91,7 +98,6 @@ public class Game_text {
             Appear in front of the abandoned house but this time it's white
          */
 
-        //SUGGESTION ENEMIES ( nine tail fox, phoenix, dragon slayer)
     }
 }
 

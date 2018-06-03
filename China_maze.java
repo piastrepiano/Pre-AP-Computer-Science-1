@@ -10,23 +10,26 @@ public class China_maze {
         Random percentage = new Random();
         Integer dpns = percentage.nextInt(100) + 1;
 
-        if(dpns <= 30){
+        if(dpns <= 40){
             Random enemy = new Random();
             Integer enemies = enemy.nextInt(3) + 1;
 
             if(enemies.equals(1)){
                 //dragon slayer
                 System.out.println("\nThere is a dragon slayer sitting on a floating chair.");
+                status.dragon = true;
                 status.fight();
             }
             else if(enemies.equals(2)){
                 //phoenix
                 System.out.println("\nThere is a phoenix flying above you.");
+                status.phoenix = true;
                 status.fight();
             }
             else if(enemies.equals(3)){
                 //nine tail fox
                 System.out.println("\nThere is a nine tail fox.");
+                status.fox = true;
                 status.fight();
             }
         }
@@ -53,7 +56,7 @@ public class China_maze {
             wind();
         }
         else if(orbsC >= 41 & orbsC <= 50){
-            status.healing_orb();
+            healing_orb();
         }
         else if(orbsC >= 51 & orbsC <= 100){
             //no orbs
@@ -119,6 +122,28 @@ public class China_maze {
         }
         else{
             System.out.print("You ignored the orbs existence.");
+        }
+    }
+
+    public void healing_orb(){
+        System.out.print("\nYou found a HEALING orb! Do you want to collect it?");
+
+        String grab = yn.nextLine();
+        if(grab.equals("yes")){
+            System.out.print("\nYou picked up the HEALING orb!");
+            status.healing = true;
+            System.out.print("\nDo you want to use this orb?");
+            String heal_or_not = yn.nextLine();
+            if(heal_or_not.equals("yes")) {
+                status.heal();
+                status.healing = false;
+            }
+        }
+        else if(grab.equals("no")){
+            System.out.print("\nYou didn't pick up the HEALING orb.");
+        }
+        else{
+            System.out.print("\nYou ignored the orbs existence.");
         }
     }
 }
