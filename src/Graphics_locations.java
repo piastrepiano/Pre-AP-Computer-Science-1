@@ -1,19 +1,49 @@
 import java.awt.*;
 import java.applet.*;
 
-public class Graphics_locations extends Applet{
+public class house extends Applet{
     public void paint(Graphics g){
-        draw.base(g);
-        draw.roof_lines(g);
-        draw.bottom_decor(g);
+        draw.draw_house(g);
     }
 }
 
 class draw{
-    public static void base (Graphics g) {
-        //bg color
+    public static boolean one = true;
+
+    public static void draw_house(Graphics g){
+        if(one){
+            bg(g);
+            base(g);
+            roof_lines(g);
+            bottom_decor(g);
+            one = false;
+        }
+        else{
+            new_bg(g);
+            new_base(g);
+            roof_lines(g);
+            bottom_decor(g);
+        }
+    }
+
+    public static void bg (Graphics g) {
+        Color darker_sky = new Color(30, 144, 255);
+        g.setColor(darker_sky);
+        g.fillRect(10, 10, 1000, 500);
         g.setColor(Color.green);
-        g.fillRect(10, 10, 1000, 600);
+        g.fillRect(10, 500, 1000, 110);
+    }
+
+    public static void new_bg (Graphics g) {
+        Color light_sky = new Color(0, 191, 255);
+        g.setColor(light_sky);
+        g.fillRect(10, 10, 1000, 500);
+        g.setColor(Color.green);
+        g.fillRect(10, 500, 1000, 110);
+    }
+
+
+    public static void base (Graphics g) {
         //color of house
         Color brown = new Color(100, 61, 1);
         g.setColor(brown);
@@ -28,6 +58,24 @@ class draw{
         top.addPoint(270, 300);
         g.fillPolygon(top);
         g.setColor(Color.darkGray);
+        g.drawPolygon(top);
+    }
+
+    public static void new_base (Graphics g){
+        //color of house
+        Color white = new Color(220, 220, 220);
+        g.setColor(white);
+        //bottom
+        g.fillRect(300, 300, 500, 310);
+        //top
+        g.setColor(Color.lightGray);
+        Polygon top = new Polygon();
+        top.addPoint(330, 100);
+        top.addPoint(770, 100);
+        top.addPoint(830, 300);
+        top.addPoint(270, 300);
+        g.fillPolygon(top);
+        g.setColor(Color.gray);
         g.drawPolygon(top);
     }
 
