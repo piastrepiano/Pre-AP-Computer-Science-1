@@ -3,7 +3,9 @@ import java.applet.*;
 
 public class house extends Applet{
     public void paint(Graphics g){
-        draw.draw_house(g);
+        draw.black_screen(g);
+        draw.with_lines_thud(g);
+        //draw.draw_house(g);
     }
 }
 
@@ -145,6 +147,26 @@ class draw{
         g.fillRect(500, 305, 100, 150);
         g.setColor(Color.black);
         g.fillArc(580, 375, 10, 10, 0, 360);
+    }
+
+    public static void black_screen(Graphics g){
+        g.setColor(Color.black);
+        g.fillRect(10, 10, 1000, 600);
+    }
+    public static void with_lines_thud(Graphics g) {
+        g.setColor(Color.white);
+        g.drawArc(460, 250, 100, 100, 0, 360);
+        g.drawLine(400, 300, 50,300);
+
+        int x1 = 400;
+        int y1 = 300;
+        int x2 = 50;
+        int y2 = 300;
+        for (int k = 1; k <= 5; k++) {
+            g.drawLine(x1, y1, x2,y2);
+            x1 += 25;
+            y1 -= 25;
+        }
     }
 }
 //draw string 2 ints and a string x, y, literal string*/
